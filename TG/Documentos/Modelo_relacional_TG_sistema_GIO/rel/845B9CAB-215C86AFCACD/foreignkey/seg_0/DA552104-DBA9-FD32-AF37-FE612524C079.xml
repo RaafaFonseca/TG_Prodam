@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DA552104-DBA9-FD32-AF37-FE612524C079" containerWithKeyObject="EC3459F1-CAB9-6BC5-D5F3-DEF5DA1A26E0" localFKIndex="04B1E15E-E671-D07D-8FCE-0ADE2B730D49" name="FK_COL_PRE">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:42:57 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>PRESIDENCIAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>53B3D09A-27C0-7845-EE92-CC4A1FC12387</referredTableID>
+<keyObject>DFECED4E-CB36-CE21-35A9-1F0546890490</keyObject>
+<referredKeyID>DFECED4E-CB36-CE21-35A9-1F0546890490</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>pre_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

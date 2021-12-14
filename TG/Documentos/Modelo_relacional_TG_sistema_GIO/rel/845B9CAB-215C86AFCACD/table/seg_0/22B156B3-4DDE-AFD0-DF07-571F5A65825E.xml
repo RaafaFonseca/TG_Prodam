@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="22B156B3-4DDE-AFD0-DF07-571F5A65825E" name="NOTAS_FISCAIS">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:50:41 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_24</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nof_id" id="2CB6E57A-3BD5-3CC7-51CB-E3595ECDA535">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:51:39 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nof_dt_cadastro" id="EE72ED91-BFF7-3D8B-3CA9-C72B419A7EBC">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:51:39 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nof_numero" id="F3992403-1626-EE75-8FC0-2F10108B3777">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:51:39 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nof_dt" id="E176323D-4C23-FE96-3F26-05230D64E06F">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:18:15 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EDACDFA9-4F72-9A13-EE19-56CA3D911C20" name="PK_NOF">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:51:39 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2CB6E57A-3BD5-3CC7-51CB-E3595ECDA535"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

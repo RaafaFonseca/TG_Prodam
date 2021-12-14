@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3153D86A-56BF-5AA0-DDE4-EE0F1A488476" name="CONTRATOS_IMPRESSORA">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:42:43 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_23</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="coi_id" id="31EED7E4-E8BB-14F8-A7BC-63FE5038AAC1">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:48:30 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="coi_dt_cadastro" id="E7CCD1A1-7F3E-8F93-BB49-56D23498A996">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:48:30 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="coi_fornecedor" id="4FD8AA15-EA73-2B8D-3A51-D3F19B6416E3">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:48:30 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="coi_dt_inicio" id="C5111FFE-6B28-E528-6303-EF732375DCCE">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:48:30 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="coi_dt_termino" id="7740D88E-90E9-F9F6-11EE-62A30624C008">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:48:30 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="87BA4731-9B4A-DAC4-DC9A-F9C2F52E344D" name="PK_COI">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 22:48:30 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="31EED7E4-E8BB-14F8-A7BC-63FE5038AAC1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

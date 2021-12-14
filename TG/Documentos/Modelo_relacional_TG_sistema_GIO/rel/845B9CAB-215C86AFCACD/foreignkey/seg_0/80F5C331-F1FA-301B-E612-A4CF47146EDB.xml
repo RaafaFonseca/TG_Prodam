@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="80F5C331-F1FA-301B-E612-A4CF47146EDB" containerWithKeyObject="EC3459F1-CAB9-6BC5-D5F3-DEF5DA1A26E0" localFKIndex="EF4D2E72-C455-285B-3507-1E1D53349CE3" name="FK_COL_IMG">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:03:30 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>IMAGENS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>EEC4B744-6225-575A-5B7F-9A27BC87DA00</referredTableID>
+<keyObject>4DF48C8A-010E-0956-A8CD-029E6BE691EE</keyObject>
+<referredKeyID>4DF48C8A-010E-0956-A8CD-029E6BE691EE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>img_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

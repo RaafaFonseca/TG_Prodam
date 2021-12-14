@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="FA819681-2F11-BAFA-45B7-C49370F2F072" mainViewID="A2EC6767-C1AA-C26D-28F0-055B3B54017F">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 16:18:17 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

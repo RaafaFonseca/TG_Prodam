@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D31E9B84-99BA-B6FB-B335-BC88CC928221" containerWithKeyObject="11154917-C805-0E5F-F5D2-28AD04E8DA31" localFKIndex="7D386339-743D-923D-B96A-C0619A2801B0" name="FK_PRG_TLC">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:49:51 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>TIPOS_LICENCA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2DA5A956-0B75-1E9B-D2F3-0CBDF767D575</referredTableID>
+<keyObject>681367A2-BF64-B304-35FB-23A7A0F11E01</keyObject>
+<referredKeyID>681367A2-BF64-B304-35FB-23A7A0F11E01</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>tlc_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

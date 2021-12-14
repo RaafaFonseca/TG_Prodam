@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CF41CC15-6108-9FDC-8C9F-02A7B9A249B2" containerWithKeyObject="EC3459F1-CAB9-6BC5-D5F3-DEF5DA1A26E0" localFKIndex="0657D545-D19B-F9A1-E1FD-9D10C64127D5" name="FK_COL_TCO">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:24:06 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>TIPOS_COLABORADOR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>90E3743D-7FB8-2F4A-DD29-1D73A15E6F98</referredTableID>
+<keyObject>B84BA5E7-E57E-41AE-8227-4F0A2CA3D911</keyObject>
+<referredKeyID>B84BA5E7-E57E-41AE-8227-4F0A2CA3D911</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>tco_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3963D11D-634E-285F-3BFF-F9A5EBFD92B4" containerWithKeyObject="EC3459F1-CAB9-6BC5-D5F3-DEF5DA1A26E0" localFKIndex="3BD4A505-DC4A-B591-6951-ABC62AD5B293" name="FK_COL_TCT">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:26:49 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>TIPOS_CONTRATOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DFA29F33-CF35-5659-0DB8-063B49BDB5FD</referredTableID>
+<keyObject>1C3A4017-DEB2-90EE-5231-084D5FC3690E</keyObject>
+<referredKeyID>1C3A4017-DEB2-90EE-5231-084D5FC3690E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>tct_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

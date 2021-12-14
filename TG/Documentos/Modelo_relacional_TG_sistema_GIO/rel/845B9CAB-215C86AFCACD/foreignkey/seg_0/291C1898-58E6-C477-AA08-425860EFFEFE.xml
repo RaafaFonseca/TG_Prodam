@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="291C1898-58E6-C477-AA08-425860EFFEFE" containerWithKeyObject="97E3F52C-B6B8-9132-173A-A24BF156AF4C" localFKIndex="FBCDAFC6-CF47-498C-5D8E-D8CCE843F1FB" name="FK_CEQ_COL">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:09:40 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>COLABORADORES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>EC3459F1-CAB9-6BC5-D5F3-DEF5DA1A26E0</referredTableID>
+<keyObject>9FDA6CD6-6330-338E-F549-603A6911735B</keyObject>
+<referredKeyID>9FDA6CD6-6330-338E-F549-603A6911735B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>col_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

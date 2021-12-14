@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="00599BAD-5F48-B3FC-D35C-6D54DD1BE45C" name="IMAGENS_PROGRAMAS">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 18:53:47 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_28</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ipr_id" id="51E05AD0-DF2D-2009-23AD-4B90C43F4114">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 18:54:15 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ipr_prg_id" id="51286C30-BDD7-A668-AABD-973F6BB59E58">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:58:08 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E5E393DD-7C83-84EE-4A49-2C62C7808719" referredColumn="47FA1EF2-5751-2389-208E-7CBD8CA3FD49"/>
+</associations>
+</Column>
+<Column name="ipr_img_id" id="ADA73E00-7789-CE20-28D3-0503183AC010">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:00:57 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDF18C58-A0A8-50C2-D0C2-9ADDC76F6F54" referredColumn="1F0245C1-5872-128D-AC7B-052490D58E06"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A488D813-07A4-C75C-9B42-94A08DD94ADE" name="PK_IPR">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 18:54:15 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51E05AD0-DF2D-2009-23AD-4B90C43F4114"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C39DD68A-866C-ABB5-2C88-0BDB03F52A2D" name="FK_IPR_PRG">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:58:08 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51286C30-BDD7-A668-AABD-973F6BB59E58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6261289B-27C4-788C-E3CB-11B25B46D99F" name="FK_IPR_IMG">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:00:57 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ADA73E00-7789-CE20-28D3-0503183AC010"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

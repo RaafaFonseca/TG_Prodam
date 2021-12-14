@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2DA5A956-0B75-1E9B-D2F3-0CBDF767D575" name="TIPOS_LICENCA">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 18:48:45 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_24</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tlc_id" id="EB52FF39-6BDE-BEC4-3524-8937BC13E9E5">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 18:49:07 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tlc_dt_cadastro" id="5840704B-2435-8212-6512-0DABFAB0F4A2">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 18:50:57 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tlc_descricao" id="0AC4FE80-CA0C-C873-C795-0CC799483B75">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 18:49:26 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="681367A2-BF64-B304-35FB-23A7A0F11E01" name="PK_TLC">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 18:49:07 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB52FF39-6BDE-BEC4-3524-8937BC13E9E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

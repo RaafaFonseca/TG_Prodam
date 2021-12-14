@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E5E393DD-7C83-84EE-4A49-2C62C7808719" containerWithKeyObject="00599BAD-5F48-B3FC-D35C-6D54DD1BE45C" localFKIndex="C39DD68A-866C-ABB5-2C88-0BDB03F52A2D" name="FK_IPR_PRG">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:58:08 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>PROGRAMAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>11154917-C805-0E5F-F5D2-28AD04E8DA31</referredTableID>
+<keyObject>4EEDC92C-C6E1-63A2-C4C0-71713A601C37</keyObject>
+<referredKeyID>4EEDC92C-C6E1-63A2-C4C0-71713A601C37</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>prg_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

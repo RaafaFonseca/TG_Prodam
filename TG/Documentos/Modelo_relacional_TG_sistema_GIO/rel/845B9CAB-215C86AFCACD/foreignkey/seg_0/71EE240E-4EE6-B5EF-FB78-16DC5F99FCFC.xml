@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="71EE240E-4EE6-B5EF-FB78-16DC5F99FCFC" containerWithKeyObject="73E5E808-B369-94AA-638A-4E2798046B6E" localFKIndex="DEB72BDE-629E-1B1A-9B86-A93ED8CCE5A8" name="FK_OCO_EQP">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:21:10 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>EQUIPAMENTOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E6F3AA5F-2207-A1C2-7F62-BE6B5632CA43</referredTableID>
+<keyObject>BBA4A584-E527-6B9F-85F6-C41D5063D01F</keyObject>
+<referredKeyID>BBA4A584-E527-6B9F-85F6-C41D5063D01F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>eqp_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9AF2EA15-DE8E-5A86-C371-5256E4969D68" containerWithKeyObject="EC3459F1-CAB9-6BC5-D5F3-DEF5DA1A26E0" localFKIndex="F3AA81E7-616C-D459-9C62-9C54DF3C136E" name="FK_COL_NUC">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:43:34 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>NUCLEOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1AFFA3AC-7FAF-6103-DBED-7AD13C0E4B78</referredTableID>
+<keyObject>65C7337D-EA67-C027-9E9E-1706F82E3EFF</keyObject>
+<referredKeyID>65C7337D-EA67-C027-9E9E-1706F82E3EFF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>nuc_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AB2CC6FB-F08E-E935-CAAF-5D35070C4B29" name="GERENCIAS">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:55:04 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ger_id" id="61F2D33E-6F60-C13F-CE5A-5DB29EFB8FB6">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:59:10 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ger_dt_cadastro" id="E78E9EFC-48F2-E522-D6CD-8814EB823332">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:59:10 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ger_descricao" id="5956E59E-75B1-2E2B-F3FA-D5E2D2691F90">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:59:10 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ger_sigla" id="8E336B7C-8E24-63F7-D44B-9D252AF334D8">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:59:10 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ger_responsavel_col_id" id="7D70C04C-E402-A225-3704-DC32A1C87045">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:37:10 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B3D359F3-C893-5FFC-96C8-ACF72C7A3456" referredColumn="E7E24ACB-0B9B-3D4A-B669-7551BFE0B7C4"/>
+</associations>
+</Column>
+<Column name="ger_dir_id" id="588BC2E0-C0D7-B79E-FB5A-09D6CAEFF436">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:40:32 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BF4D20BA-3DF4-2E39-1518-8A995C0CA8C9" referredColumn="918846B7-8D86-364A-52D0-4BEA050A0E72"/>
+</associations>
+</Column>
+<Column name="ger_pre_id" id="C1510A66-4537-BA86-808F-4B6FC3ED0314">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:40:45 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="54313843-8394-E403-E6B9-073F1D96D38A" referredColumn="6B138B89-26DC-58E1-5D95-74F1F47BA7D7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9FA3B286-D149-0570-B269-1C89F54821A8" name="GERENCIAS_PK">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:59:10 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="61F2D33E-6F60-C13F-CE5A-5DB29EFB8FB6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="68A859CE-D79E-096E-9B94-82D07FBFF4C7" name="FK_GER_COL">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:37:10 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7D70C04C-E402-A225-3704-DC32A1C87045"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="107160C8-3BC3-58AD-29C5-C13F82126B38" name="FK_GER_DIR">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:40:32 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="588BC2E0-C0D7-B79E-FB5A-09D6CAEFF436"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2BC3A73-C388-70DF-C98B-6238AC9B0D65" name="FK_GER_PRE">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:40:45 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1510A66-4537-BA86-808F-4B6FC3ED0314"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0FF49909-9BD2-0611-352F-A49475C2ACD8" containerWithKeyObject="E6F3AA5F-2207-A1C2-7F62-BE6B5632CA43" localFKIndex="77D728FE-0BBA-31E8-6B1A-8A7111AFAC82" name="FK_EQP_LOC">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:06:45 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>LOCALIZACOES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D5DF92C4-B118-49B4-A344-4202EDC71A97</referredTableID>
+<keyObject>D7A12DF6-7EBC-3EA9-DB4D-89C787250BAE</keyObject>
+<referredKeyID>D7A12DF6-7EBC-3EA9-DB4D-89C787250BAE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>loc_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

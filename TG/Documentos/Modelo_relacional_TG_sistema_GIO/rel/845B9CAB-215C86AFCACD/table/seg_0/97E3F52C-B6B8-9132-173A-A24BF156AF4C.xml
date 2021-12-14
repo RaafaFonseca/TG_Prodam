@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="97E3F52C-B6B8-9132-173A-A24BF156AF4C" name="COLABORADORES_EQUIPAMENTOS">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:06:51 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_30</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ceq_id" id="1679A134-404F-E476-33FC-764BC755D1A3">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:08:03 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ceq_eqp_id" id="D62E9DDF-BEE7-F8F9-0412-4C66E4BBF6FD">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:08:29 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BE99E97E-2B8A-3964-AC00-B63EA776794D" referredColumn="475A1098-E8C4-10D4-2C55-8663D4C5CEFD"/>
+</associations>
+</Column>
+<Column name="ceq_dt_disponibilizacao" id="A06715A1-1894-E6D5-21FC-089754D253E5">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:34:00 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ceq_dt_devolucao" id="2D50BB93-79F3-7672-649A-74AAB53BA4AC">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:34:00 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ceq_col_id" id="28C9F9F0-84A7-25DF-5052-90339574F483">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:09:40 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="291C1898-58E6-C477-AA08-425860EFFEFE" referredColumn="E7E24ACB-0B9B-3D4A-B669-7551BFE0B7C4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="61331535-4DD0-96F9-ABEB-591F6E511970" name="PK_CEQ">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:08:03 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1679A134-404F-E476-33FC-764BC755D1A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DB12CADE-010F-C6D2-764C-87A1F724F937" name="FK_CEQ_EQP">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:08:29 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D62E9DDF-BEE7-F8F9-0412-4C66E4BBF6FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FBCDAFC6-CF47-498C-5D8E-D8CCE843F1FB" name="FK_CEQ_COL">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:09:40 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28C9F9F0-84A7-25DF-5052-90339574F483"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

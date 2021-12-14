@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5854E8C4-0411-EA64-2D84-65F0B060547C" name="USUARIOS">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:43:25 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usu_id" id="23284FA5-2219-7383-1DA4-06512D9A8EF9">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:43:56 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usu_dt_cadastro" id="83BD839A-17A3-D561-23A6-C4FB96CBC05B">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:43:56 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usu_login" id="01B81141-BEAB-74C6-9410-6D96DD0182AB">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:45:57 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usu_senha" id="39B90BD5-9AB6-D59A-4CF7-64B26C5E798D">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:46:22 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usu_col_id" id="9503BD38-FAE8-6206-A9E0-D4239C3CADE4">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 21:17:04 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D505FA9-AFE6-F3CF-E19E-828FB6641F75" referredColumn="E7E24ACB-0B9B-3D4A-B669-7551BFE0B7C4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="500BE55B-6F70-E104-4E5F-EE35479922BB" name="PK_USU">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:43:56 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23284FA5-2219-7383-1DA4-06512D9A8EF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="13D6340C-F0A9-8672-6627-75901840D8CD" name="FK_USU_COL">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 21:17:04 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9503BD38-FAE8-6206-A9E0-D4239C3CADE4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

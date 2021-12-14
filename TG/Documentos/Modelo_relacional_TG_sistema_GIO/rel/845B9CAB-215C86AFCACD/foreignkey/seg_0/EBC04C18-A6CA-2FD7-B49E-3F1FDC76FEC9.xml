@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EBC04C18-A6CA-2FD7-B49E-3F1FDC76FEC9" containerWithKeyObject="E6F3AA5F-2207-A1C2-7F62-BE6B5632CA43" localFKIndex="6119A6B7-BF98-7CE6-AD41-5F88AC33E0FB" name="FK_EQP_NOF">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:11:12 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>NOTAS_FISCAIS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>22B156B3-4DDE-AFD0-DF07-571F5A65825E</referredTableID>
+<keyObject>EDACDFA9-4F72-9A13-EE19-56CA3D911C20</keyObject>
+<referredKeyID>EDACDFA9-4F72-9A13-EE19-56CA3D911C20</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>nof_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

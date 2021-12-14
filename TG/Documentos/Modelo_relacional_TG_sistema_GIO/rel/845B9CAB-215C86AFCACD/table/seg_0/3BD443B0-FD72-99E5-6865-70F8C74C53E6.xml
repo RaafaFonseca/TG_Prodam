@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3BD443B0-FD72-99E5-6865-70F8C74C53E6" name="TIPOS_ACESSO">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:38:30 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tac_id" id="AB36D78F-F0AB-160A-065C-62C8BB2BCDC9">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:40:03 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tac_descricao" id="43FB844C-B01E-B597-5EBF-E192A4E944F5">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:40:03 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="14CC9C76-D72E-7C8E-ECA5-AF0F39379276" name="PK_TAC">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-13 17:40:03 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB36D78F-F0AB-160A-065C-62C8BB2BCDC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

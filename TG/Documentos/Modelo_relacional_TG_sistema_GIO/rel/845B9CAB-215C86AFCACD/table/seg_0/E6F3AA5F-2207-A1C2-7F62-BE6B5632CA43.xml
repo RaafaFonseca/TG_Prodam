@@ -1,0 +1,179 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E6F3AA5F-2207-A1C2-7F62-BE6B5632CA43" name="EQUIPAMENTOS">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:01:31 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<ordsAlias>table_29</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="eqp_id" id="475A1098-E8C4-10D4-2C55-8663D4C5CEFD">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:01:56 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eqp_dt_cadastro" id="BCCF5F81-4CDC-419E-7E44-082AF9096F9B">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:06:14 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eqp_patrimonio" id="6FD6EF32-0110-FE00-9014-02DD34AC0754">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:05:25 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eqp_serial" id="4F60447B-A1D4-CA88-84A8-4200E23F12E8">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:05:25 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eqp_observacao" id="2855D6B9-EDC6-78AD-88E5-AF49310B31EF">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:05:25 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eqp_loc_presencial" id="B078E5D5-C1CB-0C87-DFDA-DE5CD82D2AB2">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:05:25 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eqp_compartilhado" id="BACD26B1-03E3-3930-16B9-4050E4664FD3">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:05:25 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eqp_loc_id" id="0C2CA06E-733D-2FF4-C1D0-A1EA7BBCF51E">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:06:45 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0FF49909-9BD2-0611-352F-A49475C2ACD8" referredColumn="A16E65F9-9D47-75F9-17A0-6F7620C1F87C"/>
+</associations>
+</Column>
+<Column name="eqp_nof_id" id="1FC135A7-3853-E469-98C1-04AF55C7F07F">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:11:12 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EBC04C18-A6CA-2FD7-B49E-3F1FDC76FEC9" referredColumn="2CB6E57A-3BD5-3CC7-51CB-E3595ECDA535"/>
+</associations>
+</Column>
+<Column name="eqp_teq_id" id="8A25B3B3-BA35-86E5-1D45-CDFC0DC2D367">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:12:29 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E7C43F8-9960-381E-01FD-89DB131F50C0" referredColumn="5F8E17CF-723C-8D0C-EC98-551EE27EC720"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BBA4A584-E527-6B9F-85F6-C41D5063D01F" name="PK_EQP">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 19:02:01 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="475A1098-E8C4-10D4-2C55-8663D4C5CEFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="77D728FE-0BBA-31E8-6B1A-8A7111AFAC82" name="FK_EQP_LOC">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:06:45 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0C2CA06E-733D-2FF4-C1D0-A1EA7BBCF51E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6119A6B7-BF98-7CE6-AD41-5F88AC33E0FB" name="FK_EQP_NOF">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:11:12 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1FC135A7-3853-E469-98C1-04AF55C7F07F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1ABD254D-5A46-D2E8-4DAD-289B3DF5747E" name="FK_EQP_TEQ">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-15 20:12:29 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A25B3B3-BA35-86E5-1D45-CDFC0DC2D367"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

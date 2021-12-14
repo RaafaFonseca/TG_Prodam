@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0CE2D274-CC83-22C4-9156-FDFA3AAA16B1" containerWithKeyObject="EC3459F1-CAB9-6BC5-D5F3-DEF5DA1A26E0" localFKIndex="D30C0847-3EA5-D88E-2E49-ED42F6D051AD" name="FK_COL_DIR">
+<createdBy>Tiago</createdBy>
+<createdTime>2021-11-16 14:43:09 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<referredTableLongName>DIRETORIAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C65739B1-9801-44BB-7939-FFB9F2E60759</referredTableID>
+<keyObject>5A8A31C0-4390-142E-D474-4F048FF3F77A</keyObject>
+<referredKeyID>5A8A31C0-4390-142E-D474-4F048FF3F77A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>dir_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
