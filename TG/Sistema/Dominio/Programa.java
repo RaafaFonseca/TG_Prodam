@@ -4,17 +4,17 @@ public class Programa {
     private String observacao;
     private TipoLicenca tpLicenca;
 
-    public Programa (){
-        this.setDescricao(" ");
-        this.setLicenca(" ");
-        this.setObservacao(" ");
-        this.setTpLicenca(new TipoLicenca());
+    public Programa(String descricao, String licenca, String observacao, TipoLicenca tpLicenca) {
+        this.descricao = descricao;
+        this.licenca = licenca;
+        this.observacao = observacao;
+        this.tpLicenca = tpLicenca;
     }
-    public Programa (String descricao, String licenca, String observacao, TipoLicenca tpLicenca){
-        this.setDescricao(descricao);
-        this.setLicenca(licenca);
-        this.setObservacao(observacao);
-        this.setTpLicenca(tpLicenca);       
+    public Programa (){
+        this.descricao = " ";
+        this.licenca = " ";
+        this.observacao = " ";
+        this.tpLicenca = new TipoLicenca();
     }
 
     public String getDescricao() {
