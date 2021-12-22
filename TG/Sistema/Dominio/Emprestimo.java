@@ -1,24 +1,27 @@
 import java.util.Date;
 
-public class DisponibilizacaoEquipamento {
+public class Emprestimo {
     private Date dataDisponibilizacao;
     private Date dataDevolucao;
     private Colaborador colaborador;
     private Equipamento equipamento;
+    private boolean isVigente;
     
-    public DisponibilizacaoEquipamento() {
+    public Emprestimo() {
         this.dataDisponibilizacao = new Date();
         this.dataDevolucao = new Date();
         this.colaborador = new Colaborador();
         this.equipamento = new Equipamento();
+        this.isVigente = true;
     }
 
-    public DisponibilizacaoEquipamento(Date dataDisponibilizacao, Date dataDevolucao, Colaborador colaborador,
-            Equipamento equipamento) {
+    public Emprestimo(Date dataDisponibilizacao, Date dataDevolucao, Colaborador colaborador,
+            Equipamento equipamento, boolean isVigente) {
         this.dataDisponibilizacao = dataDisponibilizacao;
         this.dataDevolucao = dataDevolucao;
         this.colaborador = colaborador;
         this.equipamento = equipamento;
+        this.isVigente = isVigente;
     }
 
     public Date getDataDisponibilizacao() {
@@ -51,6 +54,14 @@ public class DisponibilizacaoEquipamento {
 
     public void setEquipamento(Equipamento equipamento) {
         this.equipamento = equipamento;
+    }
+
+    public boolean isVigente() {
+        return isVigente;
+    }
+
+    public void setVigente(boolean isVigente) {
+        this.isVigente = isVigente;
     }
 
     

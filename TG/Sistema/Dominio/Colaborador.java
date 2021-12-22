@@ -10,7 +10,7 @@ public class Colaborador {
     private String tipoColaborador;
     private String regimeTrabalho;
     private GrupoGerencial grupoGerencial;
-    private List<DisponibilizacaoEquipamento> equipamentosDisponibilizados;
+    private List<Emprestimo> equipamentosDisponibilizados;
     private List<ContratoComodato> contratosComodato;
 
     public Colaborador() {
@@ -22,13 +22,13 @@ public class Colaborador {
         this.tipoColaborador = " ";
         this.regimeTrabalho = " ";
         this.grupoGerencial = null;
-        this.equipamentosDisponibilizados = new ArrayList<DisponibilizacaoEquipamento>();
+        this.equipamentosDisponibilizados = new ArrayList<Emprestimo>();
         this.contratosComodato = new ArrayList<ContratoComodato>();
     }
 
     public Colaborador(String rf, String nome, String observacao, List<Ocorrencia> ocorrencias, String tipoAcesso,
             String tipoColaborador, String regimeTrabalho, GrupoGerencial grupoGerencial,
-            List<DisponibilizacaoEquipamento> equipamentosDisponibilizados,
+            List<Emprestimo> equipamentosDisponibilizados,
             List<ContratoComodato> contratosComodato) {
         this.rf = rf;
         this.nome = nome;
@@ -106,11 +106,11 @@ public class Colaborador {
         this.grupoGerencial = grupoGerencial;
     }
 
-    public List<DisponibilizacaoEquipamento> getEquipamentosDisponibilizados() {
+    public List<Emprestimo> getEquipamentosDisponibilizados() {
         return equipamentosDisponibilizados;
     }
 
-    public void setEquipamentosDisponibilizados(List<DisponibilizacaoEquipamento> equipamentosDisponibilizados) {
+    public void setEquipamentosDisponibilizados(List<Emprestimo> equipamentosDisponibilizados) {
         this.equipamentosDisponibilizados = equipamentosDisponibilizados;
     }
 
