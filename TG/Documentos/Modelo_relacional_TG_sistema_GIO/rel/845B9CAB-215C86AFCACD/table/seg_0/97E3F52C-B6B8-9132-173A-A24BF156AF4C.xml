@@ -70,6 +70,39 @@
 <colAssociation fkAssociation="291C1898-58E6-C477-AA08-425860EFFEFE" referredColumn="E7E24ACB-0B9B-3D4A-B669-7551BFE0B7C4"/>
 </associations>
 </Column>
+<Column name="ceq_vigente" id="D8FA8967-57A3-DDFB-311F-E855C4B2914E">
+<createdBy>Tiago</createdBy>
+<createdTime>2022-01-09 19:43:11 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ceq_finalidade" id="0BFCF220-8B54-CB13-6025-CC1571DE984D">
+<createdBy>Tiago</createdBy>
+<createdTime>2022-01-09 19:43:51 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ceq_respEntrega" id="6E97099F-2140-49BE-B5C7-64126B389505">
+<createdBy>Tiago</createdBy>
+<createdTime>2022-01-09 19:44:55 UTC</createdTime>
+<ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="61331535-4DD0-96F9-ABEB-591F6E511970" name="PK_CEQ">
