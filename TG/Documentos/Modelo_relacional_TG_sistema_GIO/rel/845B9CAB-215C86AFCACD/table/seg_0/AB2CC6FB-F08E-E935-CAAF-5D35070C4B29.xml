@@ -98,7 +98,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="9FA3B286-D149-0570-B269-1C89F54821A8" name="GERENCIAS_PK">
+<ind_PK_UK id="9FA3B286-D149-0570-B269-1C89F54821A8" name="PK_GER">
 <createdBy>Tiago</createdBy>
 <createdTime>2021-11-13 17:59:10 UTC</createdTime>
 <ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>

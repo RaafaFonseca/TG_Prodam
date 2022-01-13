@@ -83,7 +83,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="65C7337D-EA67-C027-9E9E-1706F82E3EFF" name="NUCLEOS_PK">
+<ind_PK_UK id="65C7337D-EA67-C027-9E9E-1706F82E3EFF" name="PK_NUC">
 <createdBy>Tiago</createdBy>
 <createdTime>2021-11-13 18:01:34 UTC</createdTime>
 <ownerDesignName>Modelo_relacional_TG_sistema_GIO</ownerDesignName>
