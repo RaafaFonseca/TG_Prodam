@@ -1,6 +1,5 @@
-create database fornecedores;
-use fornecedores;
-
+create database prodam;
+use prodam;
 
 CREATE TABLE colaboradores (
     col_id          INTEGER(6) NOT NULL,
@@ -77,11 +76,10 @@ CREATE TABLE gerencias (
 );
 
 CREATE TABLE imagens (
-    img_id          INTEGER(6) NOT NULL,
+    img_id          INTEGER(6) NOT NULL auto_increment,
     img_dt_cadastro TIMESTAMP NOT NULL,
     img_descricao   VARCHAR(50) NOT NULL
 );
-
 CREATE TABLE imagens_programas (
     ipr_id     INTEGER(6) NOT NULL,
     ipr_prg_id INTEGER(6) NOT NULL,
@@ -250,5 +248,6 @@ ALTER TABLE ocorrencias                ADD CONSTRAINT fk_oco_eqp FOREIGN KEY ( o
 ALTER TABLE presidencias               ADD CONSTRAINT fk_pre_col FOREIGN KEY ( pre_responsavel_col_id ) REFERENCES colaboradores ( col_id );
 ALTER TABLE programas                  ADD CONSTRAINT fk_prg_tlc FOREIGN KEY ( prg_tlc_id )             REFERENCES tipos_licenca ( tlc_id );
 ALTER TABLE usuarios                   ADD CONSTRAINT fk_usu_col FOREIGN KEY ( usu_col_id )             REFERENCES colaboradores ( col_id );
+
 
 
