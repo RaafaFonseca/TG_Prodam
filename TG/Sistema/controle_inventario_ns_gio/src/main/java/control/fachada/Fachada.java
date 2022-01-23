@@ -18,82 +18,27 @@ import util.Resultado;
 public class Fachada implements IFachada{
     
     private Map<String, Map<String, List<IStrategy>>> rns;
-    private Map<String, IDAO> daos;
     private Resultado resultado;
+    private SalvarDAO salvarDao;
     
     public Fachada(){
-        
         rns = new HashMap<String, Map<String, List<IStrategy>>> ();
-        daos = new HashMap<String, IDAO>();
+       
+        salvarDao = new SalvarDAO();
         
-        /*FornecedorDAO fornecedorDAO = new FornecedorDAO();
-        ProdutoDAO produtoDAO =       new ProdutoDAO();
-        ServicoDAO servicoDAO =       new ServicoDAO(); 
-        
-        daos.put(Fornecedor.class.getName(), fornecedorDAO);
-        daos.put(Produto.class.getName(), produtoDAO);
-        daos.put(Servico.class.getName(), servicoDAO);        
-        
-        //Regras de negócio
-        GerarLog gerarLog = new GerarLog();
-        ValidarCNPJ vCNPJ = new ValidarCNPJ();
-        ValidarCamposObrigatorios vCamposObrigatorios = new ValidarCamposObrigatorios();
-        ValidarExistenciaCNAE vExistenciaCNAE = new ValidarExistenciaCNAE();
-        ValidarQtdMinContatoAssociado vContatoAssociado = new ValidarQtdMinContatoAssociado();
-        ValidarQtdMinProduto vQtdMinProduto = new ValidarQtdMinProduto();
-        
-        //Regras de negócio quando for salvar um fornecedor
-        ArrayList<IStrategy> rnsSalvarFornecedor = new ArrayList<IStrategy>();
-        rnsSalvarFornecedor.add(gerarLog);
-        rnsSalvarFornecedor.add(vCNPJ);
-        rnsSalvarFornecedor.add(vCamposObrigatorios);
-        rnsSalvarFornecedor.add(vExistenciaCNAE);
-        rnsSalvarFornecedor.add(vContatoAssociado);
-        rnsSalvarFornecedor.add(vQtdMinProduto);
-        
-        ArrayList<IStrategy> rnsAlterarFornecedor = new ArrayList<IStrategy>();
-        ArrayList<IStrategy> rnsExcluirFornecedor = new ArrayList<IStrategy>();
-        ArrayList<IStrategy> rnsConsultarFornecedor = new ArrayList<IStrategy>();
+        ArrayList<IStrategy> rnsSalvarImagem = new ArrayList<IStrategy>();
+        ArrayList<IStrategy> rnsAlterarImagem = new ArrayList<IStrategy>();
+        ArrayList<IStrategy> rnsExcluirImagem = new ArrayList<IStrategy>();
+        ArrayList<IStrategy> rnsConsultarImagem = new ArrayList<IStrategy>();
    
-        //Mapa de operações e regras de negócio do fornecedor
-        Map<String, List<IStrategy>> rnsFornecedor = new HashMap<String, List<IStrategy>>();     
-        rnsFornecedor.put("SALVAR", rnsSalvarFornecedor);
-        rnsFornecedor.put("ALTERAR", rnsAlterarFornecedor);
-        rnsFornecedor.put("EXCLUIR", rnsExcluirFornecedor);
-        rnsFornecedor.put("CONSULTAR", rnsConsultarFornecedor);
-   
-        //Produto
-        ArrayList<IStrategy> rnsSalvarProduto = new ArrayList<IStrategy>();
-        ArrayList<IStrategy> rnsAlterarProduto = new ArrayList<IStrategy>();
-        ArrayList<IStrategy> rnsExcluirProduto = new ArrayList<IStrategy>();
-        ArrayList<IStrategy> rnsConsultarProduto = new ArrayList<IStrategy>();
+        Map<String, List<IStrategy>> rnsImagem = new HashMap<String, List<IStrategy>>();     
+        rnsImagem.put("SALVAR", rnsSalvarImagem);
+        rnsImagem.put("ALTERAR", rnsAlterarImagem);
+        rnsImagem.put("EXCLUIR", rnsExcluirImagem);
+        rnsImagem.put("CONSULTAR", rnsConsultarImagem);
         
-        Map<String, List<IStrategy>> rnsProduto = new HashMap<String, List<IStrategy>>();
+        rns.put(Imagem.class.getName(), rnsImagem);   
         
-        rnsProduto.put("SALVAR", rnsSalvarProduto);
-        rnsProduto.put("ALTERAR", rnsAlterarProduto);
-        rnsProduto.put("EXCLUIR", rnsExcluirProduto);
-        rnsProduto.put("CONSULTAR", rnsConsultarProduto);
-        
-        //Servico
-        ArrayList<IStrategy> rnsSalvarServico = new ArrayList<IStrategy>();
-        ArrayList<IStrategy> rnsAlterarServico = new ArrayList<IStrategy>();
-        ArrayList<IStrategy> rnsExcluirServico = new ArrayList<IStrategy>();
-        ArrayList<IStrategy> rnsConsultarServico = new ArrayList<IStrategy>();
-        
-        Map<String, List<IStrategy>> rnsServico = new HashMap<String, List<IStrategy>>();
-        
-        rnsServico.put("SALVAR", rnsSalvarServico);
-        rnsServico.put("ALTERAR", rnsAlterarServico);
-        rnsServico.put("EXCLUIR", rnsExcluirServico);
-        rnsServico.put("CONSULTAR", rnsConsultarServico);
-        
-        
-        rns.put(Servico.class.getName(), rnsServico);
-        rns.put(Produto.class.getName(), rnsProduto);
-        rns.put(Fornecedor.class.getName(),rnsFornecedor);
-        
-        */
     }
     
     @Override
@@ -104,9 +49,8 @@ public class Fachada implements IFachada{
         String msg = aplicarRegras(entidade, "SALVAR");
         
         if(msg == null){
-            IDAO dao = daos.get(nmClass);
             try{
-                dao.salvar(entidade); 
+                salvarDao.salvar(entidade); 
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
@@ -122,20 +66,18 @@ public class Fachada implements IFachada{
     public Resultado alterar(EntidadeDominio entidade) {
         resultado = new Resultado();
         String nmClass = entidade.getClass().getName();
-           
-        String msg = aplicarRegras(entidade, "ALTERAR");
-
+       
+        String msg = aplicarRegras(entidade, "SALVAR");
+        
         if(msg == null){
-            IDAO dao = daos.get(nmClass);
             try{
-                dao.alterar(entidade);
+                salvarDao.salvar(entidade); 
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
-                
             }catch(Exception ex){
                 ex.printStackTrace();
-                resultado.setMsg("Não foi possível alterar o(a)" + nmClass);
+                resultado.setMsg("Não foi possível salvar o(a)" + nmClass);
             }   
         }     
         return resultado;
@@ -145,20 +87,18 @@ public class Fachada implements IFachada{
     public Resultado excluir(EntidadeDominio entidade) {
         resultado = new Resultado();
         String nmClass = entidade.getClass().getName();
-           
-        String msg = aplicarRegras(entidade, "EXCLUIR");
-
+       
+        String msg = aplicarRegras(entidade, "SALVAR");
+        
         if(msg == null){
-            IDAO dao = daos.get(nmClass);
             try{
-                dao.excluir(entidade);
+                salvarDao.salvar(entidade); 
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
-                
             }catch(Exception ex){
                 ex.printStackTrace();
-                resultado.setMsg("Não foi possível excluir o(a)" + nmClass);
+                resultado.setMsg("Não foi possível salvar o(a)" + nmClass);
             }   
         }     
         return resultado;

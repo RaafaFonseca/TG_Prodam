@@ -1,8 +1,10 @@
-package model.dominio;
 /**
  *
  * @author Tiago
  */
+
+
+package model.dominio;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,7 +9,7 @@ package model.dominio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Imagem {
+public class Imagem extends EntidadeDominio{
     private String  descricao;
     private List<Programa> programas;
 
