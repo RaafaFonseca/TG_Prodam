@@ -79,11 +79,18 @@ public class SalvarDAO{
         
         switch (nameEntidade) {
             case "model.dominio.Imagem":
-            script = "INSERT INTO IMAGENS (img_id, img_dt_cadastro, img_descricao)"
-            +" VALUES(img_id, now(), ?);";
+                script = "INSERT INTO IMAGENS (img_id, img_dt_cadastro, img_descricao)"
+                +" VALUES(img_id, now(), ?);";
             break;
 
-            case "Colaborador":
+            case "model.dominio.TipoLicenca":
+                script = "INSERT INTO tipos_licenca (tlc_id, tlc_dt_cadastro, tlc_descricao)"
+                + "VALUES(tlc_id, now(), ?);";
+            break;
+
+            case "model.dominio.Programa":
+                script = "INSERT INTO programas (prg_id, prg_dt_cadastro, prg_descricao, prg_observacao, prg_tlc_id)"
+                + "VALUES(prg_id, now(), ?, ?, ?);";
             break;
 
             default:
@@ -94,12 +101,26 @@ public class SalvarDAO{
     }
 
     public void executarStmt (PreparedStatement stmt, EntidadeDominio entidade) throws SQLException{
-        
-        if (entidade.getClass().getName().equals("model.dominio.Imagem")) {
+        String nameEntidade = entidade.getClass().getName(); 
 
-            stmt.setString(1, ((Imagem)entidade).getDescricao());
-        }
-        
+        switch (nameEntidade) {
+            
+            case "model.dominio.Imagem":
+                stmt.setString(1, ((Imagem)entidade).getDescricao());
+            break;
+
+            case "model.dominio.TipoLicenca":
+                stmt.setString(1, ((TipoLicenca)entidade).getDescricao());
+            break;
+
+            case "model.dominio.Programa":
+                stmt.setString(1, ((Programa)entidade).getDescricao());
+                stmt.setString(2, ((Programa)entidade).getObservacao());
+                stmt.setInt(3, ((Programa)entidade).getTpLicenca().getId());
+            break;
+
+            default:
+            break;
+        }  
     }
-
 }

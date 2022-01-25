@@ -6,7 +6,7 @@
 
 package model.dominio;
 
-public class TipoLicenca {
+public class TipoLicenca extends EntidadeDominio{
     private String descricao;
 
     public TipoLicenca(){

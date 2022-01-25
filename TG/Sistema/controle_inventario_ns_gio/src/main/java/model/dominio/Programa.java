@@ -7,7 +7,7 @@
 
 package model.dominio;
 
-public class Programa {
+public class Programa extends EntidadeDominio{
     private String descricao;
     private String licenca;
     private String observacao;
