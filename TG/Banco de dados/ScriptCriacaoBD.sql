@@ -280,6 +280,7 @@ ALTER TABLE tipos_equipamento                      MODIFY teq_id INTEGER(6)     
 ALTER TABLE tipos_licenca                          MODIFY tlc_id INTEGER(6)     NOT NULL AUTO_INCREMENT;
 ALTER TABLE usuarios                               MODIFY usu_id INTEGER(6)     NOT NULL AUTO_INCREMENT;
 
+
 /* Chaves Estrangeiras */
 ALTER TABLE contratos_comodato         ADD CONSTRAINT fk_ccm_col FOREIGN KEY ( ccm_col_id )             REFERENCES colaboradores ( col_id );
 ALTER TABLE contratos_comodato         ADD CONSTRAINT fk_ccm_stt FOREIGN KEY ( ccm_stt_id )             REFERENCES estatus ( stt_id );
@@ -313,3 +314,10 @@ ALTER TABLE programas                  ADD CONSTRAINT fk_prg_tlc FOREIGN KEY ( p
 ALTER TABLE usuarios                   ADD CONSTRAINT fk_usu_col FOREIGN KEY ( usu_col_id )             REFERENCES colaboradores ( col_id );
 
 
+INSERT INTO tipos_licenca (tlc_id, tlc_dt_cadastro, tlc_descricao)
+VALUES(tlc_id, now(), 'Open-Source');
+
+INSERT INTO programas (prg_id, prg_dt_cadastro, prg_descricao, prg_observacao, prg_tlc_id)
+VALUES(prg_id, now(), 'Visio 2007', 'Descontinuado', 1);
+
+SELECT * FROM tipos_licenca;
