@@ -18,13 +18,21 @@ import util.Resultado;
 public class Fachada implements IFachada{
     
     private Map<String, Map<String, List<IStrategy>>> rns;
+    private Map<String, IDAO> daos;
     private Resultado resultado;
-    private SalvarDAO salvarDao;
+    
+
     
     public Fachada(){
-        rns = new HashMap<String, Map<String, List<IStrategy>>> ();
        
-        salvarDao = new SalvarDAO();
+        rns = new HashMap<String, Map<String, List<IStrategy>>> ();
+        daos = new HashMap<String, IDAO>();
+        
+        ProgramaDAO programaDAO = new ProgramaDAO();
+        ImagemDAO imagemDAO = new ImagemDAO();
+
+        daos.put(Programa.class.getName(), programaDAO);
+        daos.put(Imagem.class.getName(), imagemDAO);
         
         ArrayList<IStrategy> rnsSalvarImagem = new ArrayList<IStrategy>();
         ArrayList<IStrategy> rnsAlterarImagem = new ArrayList<IStrategy>();
@@ -49,8 +57,9 @@ public class Fachada implements IFachada{
         String msg = aplicarRegras(entidade, "SALVAR");
         
         if(msg == null){
+            IDAO dao = daos.get(nmClass);
             try{
-                salvarDao.salvar(entidade); 
+                dao.salvar(entidade); 
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
@@ -66,18 +75,20 @@ public class Fachada implements IFachada{
     public Resultado alterar(EntidadeDominio entidade) {
         resultado = new Resultado();
         String nmClass = entidade.getClass().getName();
-       
-        String msg = aplicarRegras(entidade, "SALVAR");
-        
+           
+        String msg = aplicarRegras(entidade, "ALTERAR");
+
         if(msg == null){
+            IDAO dao = daos.get(nmClass);
             try{
-                salvarDao.salvar(entidade); 
+                dao.alterar(entidade);
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
+                
             }catch(Exception ex){
                 ex.printStackTrace();
-                resultado.setMsg("Não foi possível salvar o(a)" + nmClass);
+                resultado.setMsg("Não foi possível alterar o(a)" + nmClass);
             }   
         }     
         return resultado;
@@ -87,18 +98,20 @@ public class Fachada implements IFachada{
     public Resultado excluir(EntidadeDominio entidade) {
         resultado = new Resultado();
         String nmClass = entidade.getClass().getName();
-       
-        String msg = aplicarRegras(entidade, "SALVAR");
-        
+           
+        String msg = aplicarRegras(entidade, "EXCLUIR");
+
         if(msg == null){
+            IDAO dao = daos.get(nmClass);
             try{
-                salvarDao.salvar(entidade); 
+                dao.excluir(entidade);
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
+                
             }catch(Exception ex){
                 ex.printStackTrace();
-                resultado.setMsg("Não foi possível salvar o(a)" + nmClass);
+                resultado.setMsg("Não foi possível excluir o(a)" + nmClass);
             }   
         }     
         return resultado;

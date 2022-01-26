@@ -26,9 +26,8 @@ public class VhPrograma implements IViewHelper{
         if(operacao.equals("Salvar")){
             programa.setDescricao(request.getParameter("descricao"));
             programa.setObservacao(request.getParameter("observacao"));
-            programa.getTpLicenca().setId(Integer.parseInt(request.getParameter("tipoLicenca")));
+            programa.setLicenca(request.getParameter("licenca"));
         }
-
         return programa;
     }
 

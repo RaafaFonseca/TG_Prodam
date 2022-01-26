@@ -22,7 +22,7 @@ import util.Resultado;
  *
  * @author Tiago
  */
-@WebServlet(urlPatterns = {"/Imagem", "/TipoLicenca", "/Programa"})
+@WebServlet(urlPatterns = {"/Imagem", "/Programa"})
 public class Controller extends HttpServlet {
     
     private static Map<String, ICommand> commands;
@@ -40,7 +40,6 @@ public class Controller extends HttpServlet {
         vhs = new HashMap<String, IViewHelper>();
         
         vhs.put("/controle_inventario_ns_gio/Imagem", new VhImagem());
-        vhs.put("/controle_inventario_ns_gio/TipoLicenca", new VhTpLicenca());
         vhs.put("/controle_inventario_ns_gio/Programa", new VhPrograma());
     }
     /**
