@@ -6,15 +6,12 @@
 package model.dao;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 /**
  *
  * @author Tiago
  */
-public abstract class AbstractDAO implements IDAO{
+public abstract class AbstractDAO{
     protected Connection conn;
     protected boolean ctrlTransacao;
-    protected PreparedStatement stmt = null;
-    protected ResultSet rs = null;
 }

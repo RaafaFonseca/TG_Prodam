@@ -30,7 +30,7 @@ public class VhImagem implements IViewHelper{
 
 
         if(operacao.equals("Salvar")){
-            imagem.setDescricao(request.getParameter("nome"));
+            imagem.setDescricao(request.getParameter("descricao"));
             
             programa.setDescricao(request.getParameter("programa1"));
             programa.setId(1);

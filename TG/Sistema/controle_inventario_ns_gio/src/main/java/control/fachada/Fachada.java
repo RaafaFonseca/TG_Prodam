@@ -18,21 +18,12 @@ import util.Resultado;
 public class Fachada implements IFachada{
     
     private Map<String, Map<String, List<IStrategy>>> rns;
-    private Map<String, IDAO> daos;
     private Resultado resultado;
-    
 
-    
     public Fachada(){
        
         rns = new HashMap<String, Map<String, List<IStrategy>>> ();
-        daos = new HashMap<String, IDAO>();
-        
-        ProgramaDAO programaDAO = new ProgramaDAO();
-        ImagemDAO imagemDAO = new ImagemDAO();
 
-        daos.put(Programa.class.getName(), programaDAO);
-        daos.put(Imagem.class.getName(), imagemDAO);
         
         ArrayList<IStrategy> rnsSalvarImagem = new ArrayList<IStrategy>();
         ArrayList<IStrategy> rnsAlterarImagem = new ArrayList<IStrategy>();
@@ -57,9 +48,9 @@ public class Fachada implements IFachada{
         String msg = aplicarRegras(entidade, "SALVAR");
         
         if(msg == null){
-            IDAO dao = daos.get(nmClass);
+            SalvarDAO salvarDAO = new SalvarDAO();
             try{
-                dao.salvar(entidade); 
+                salvarDAO.salvar(entidade); 
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
@@ -79,9 +70,9 @@ public class Fachada implements IFachada{
         String msg = aplicarRegras(entidade, "ALTERAR");
 
         if(msg == null){
-            IDAO dao = daos.get(nmClass);
+            AlterarDAO alterarDAO = new AlterarDAO();
             try{
-                dao.alterar(entidade);
+                alterarDAO.alterar(entidade);
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
@@ -102,9 +93,9 @@ public class Fachada implements IFachada{
         String msg = aplicarRegras(entidade, "EXCLUIR");
 
         if(msg == null){
-            IDAO dao = daos.get(nmClass);
+            ExcluirDAO excluirDAO = new ExcluirDAO();
             try{
-                dao.excluir(entidade);
+                excluirDAO.excluir(entidade);
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
