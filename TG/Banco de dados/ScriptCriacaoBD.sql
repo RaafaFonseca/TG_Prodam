@@ -88,7 +88,7 @@ CREATE TABLE localizacoes (
     loc_id          INTEGER(6),
     loc_dt_cadastro TIMESTAMP,
     loc_predio      VARCHAR(20),
-    loc_andar       INTEGER(2),
+    loc_andar       VARCHAR(2),
     loc_lado        VARCHAR(15),
     loc_referencia  VARCHAR(30)
 );
@@ -131,7 +131,7 @@ CREATE TABLE programas (
     prg_dt_cadastro TIMESTAMP,
     prg_descricao   VARCHAR(20),
     prg_licenca     VARCHAR(20),
-    prg_obervacao   VARCHAR(200),
+    prg_observacao   VARCHAR(200),
     prg_tlc_id      INTEGER(6) 
 );
 
@@ -230,7 +230,7 @@ ALTER TABLE imagens                                MODIFY img_dt_cadastro TIMEST
 ALTER TABLE imagens                                MODIFY img_descricao VARCHAR(50)           NOT NULL;
 ALTER TABLE localizacoes                           MODIFY loc_dt_cadastro TIMESTAMP           NOT NULL;
 ALTER TABLE localizacoes                           MODIFY loc_predio VARCHAR(20)              NOT NULL;
-ALTER TABLE localizacoes                           MODIFY loc_andar INTEGER(2)                NOT NULL;
+ALTER TABLE localizacoes                           MODIFY loc_andar VARCHAR(2)                NOT NULL;
 ALTER TABLE notas_fiscais                          MODIFY nof_dt_cadastro TIMESTAMP           NOT NULL;
 ALTER TABLE notas_fiscais                          MODIFY nof_numero VARCHAR(20)              NOT NULL;
 ALTER TABLE notas_fiscais                          MODIFY nof_dt DATE                         NOT NULL;
@@ -317,7 +317,14 @@ ALTER TABLE usuarios                   ADD CONSTRAINT fk_usu_col FOREIGN KEY ( u
 INSERT INTO tipos_licenca (tlc_id, tlc_dt_cadastro, tlc_descricao)
 VALUES(tlc_id, now(), 'Open-Source');
 
-INSERT INTO programas (prg_id, prg_dt_cadastro, prg_descricao, prg_observacao, prg_tlc_id)
-VALUES(prg_id, now(), 'Visio 2007', 'Descontinuado', 1);
+INSERT INTO programas (prg_id, prg_dt_cadastro, prg_descricao, prg_licenca, prg_observacao, prg_tlc_id)
+VALUES(prg_id, now(), 'Visio 2007', 'Licenciado','Descontinuado', 1);
 
-SELECT * FROM tipos_licenca;
+INSERT INTO tipos_equipamento(teq_id, teq_dt_cadastro, teq_descricao, teq_marca, teq_modelo, teq_fornecedor, teq_polegadas)
+VALUES(teq_id, now(), 'Notebook', 'Lenovo', 'Thinkped', 'Lenovo', '19');
+
+INSERT INTO localizacoes(loc_id, loc_dt_cadastro, loc_predio, loc_andar, loc_lado, loc_referencia)
+VALUES(loc_id, now(), 'Líbero Badaró', 1, 'Anhangabaú', 'Perto da porta');
+
+SELECT * FROM localizacoes;
+SELECT * FROM tipos_equipamento;
