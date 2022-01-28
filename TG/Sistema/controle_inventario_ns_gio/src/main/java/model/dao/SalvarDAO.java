@@ -5,11 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import model.dao.relacoes.ImagemPrograma;
-import model.dominio.EntidadeDominio;
-import model.dominio.Imagem;
-import model.dominio.Programa;
+import model.dominio.*;
 import util.Conectar;
 
 /**
@@ -17,6 +14,8 @@ import util.Conectar;
  * @author Tiago
  */
 public class SalvarDAO extends AbstractDAO{
+    private PreparedStatement stmt = null;
+    private ResultSet rs = null;
 
     public SalvarDAO(){
         this.conn =  null;
@@ -28,10 +27,7 @@ public class SalvarDAO extends AbstractDAO{
     public void salvar(EntidadeDominio entidade) {
         String nameEntidade = entidade.getClass().getName(); 
         String sql = getScript(nameEntidade);
-
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        
+ 
         try{
             if(conn == null || this.conn.isClosed()){
                 this.conn = Conectar.getConnection();
@@ -42,28 +38,20 @@ public class SalvarDAO extends AbstractDAO{
 
             conn.setAutoCommit(false);
 
-            stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            this.stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             
             executeStmt(entidade, stmt);
 
-            stmt.executeUpdate();
+            this.stmt.executeUpdate();
 
-            rs = stmt.getGeneratedKeys();
+            this.rs = this.stmt.getGeneratedKeys();
 
             int id = 0;
-            if(rs.next()) {id = rs.getInt(1);}
+            if(this.rs.next()) {id = rs.getInt(1);}
             
             entidade.setId(id);
 
-            if(nameEntidade.equals(Imagem.class.getName())){
-                Imagem imagem = (Imagem) entidade;
-                if(imagem.getProgramas().size() > 0){
-                    for (Programa programa : imagem.getProgramas()){
-                        
-                        relatingEntities(programa, imagem);
-                     }
-                }
-            }
+            saveDependencies(entidade);
 
             if(ctrlTransacao) {conn.commit();}
 
@@ -131,15 +119,22 @@ public class SalvarDAO extends AbstractDAO{
     }
 
     public void relatingEntities(EntidadeDominio entidade1, EntidadeDominio entidade2){
-        String nameEntity1 = entidade1.getClass().getName();
-        String nameEntity2 = entidade2.getClass().getName();
+        if(entidade1 instanceof Programa && entidade2 instanceof Imagem){     
+            ImagemPrograma imgPrograma = new ImagemPrograma((Programa)entidade1, (Imagem)entidade2);
 
-        if(nameEntity1.equals(Imagem.class.getName()) && nameEntity2.equals(Programa.class.getName())){
-            ImagemPrograma imgPrograma = new ImagemPrograma();
-            imgPrograma.setImagem((Imagem)entidade1);
-            imgPrograma.setPrograma((Programa)entidade2);
-            
-            salvar(imgPrograma);
+            SalvarDAO salvarDAO = new SalvarDAO(conn);
+            salvarDAO.salvar(imgPrograma);
+        }
+    }
+
+    public void saveDependencies(EntidadeDominio entidade){
+        if(entidade instanceof Imagem){
+            Imagem imagem = (Imagem) entidade;
+            if(imagem.getProgramas().size() > 0){
+                for (Programa programa : imagem.getProgramas()){
+                    relatingEntities(programa, imagem);
+                 }
+            }
         }
     }
 }

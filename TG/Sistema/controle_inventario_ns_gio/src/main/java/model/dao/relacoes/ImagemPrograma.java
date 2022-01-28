@@ -10,6 +10,11 @@ public class ImagemPrograma extends EntidadeDominio{
     private Imagem imagem;
     private Programa programa;
     
+    public ImagemPrograma (Programa programa, Imagem imagem){
+        this.programa = programa;
+        this.imagem = imagem;
+    }
+    
     public Programa getPrograma() {
         return programa;
     }

@@ -25,24 +25,26 @@ public class VhImagem implements IViewHelper{
         String operacao = request.getParameter("operacao");
 
         Imagem imagem = new Imagem();
-        Programa programa = new Programa();
+        Programa programa1 = new Programa();
+        Programa programa2 = new Programa();
+        Programa programa3 = new Programa();
         List <Programa> programas = new ArrayList<Programa>();
 
 
         if(operacao.equals("Salvar")){
             imagem.setDescricao(request.getParameter("descricao"));
             
-            programa.setDescricao(request.getParameter("programa1"));
-            programa.setId(1);
-            programas.add(programa);
+            programa1.setDescricao(request.getParameter("programa1"));
+            programa1.setId(1);
+            programas.add(programa1);
             
-            programa.setDescricao(request.getParameter("programa2"));
-            programa.setId(2);
-            programas.add(programa);
+            programa2.setDescricao(request.getParameter("programa2"));
+            programa2.setId(2);
+            programas.add(programa2);
 
-            programa.setDescricao(request.getParameter("programa3"));
-            programa.setId(3);
-            programas.add(programa);
+            programa3.setDescricao(request.getParameter("programa3"));
+            programa3.setId(3);
+            programas.add(programa3);
 
             imagem.setProgramas(programas);
         }
