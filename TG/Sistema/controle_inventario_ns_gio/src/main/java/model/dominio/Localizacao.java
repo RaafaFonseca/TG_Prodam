@@ -6,7 +6,7 @@
 
 package model.dominio;
 
-public class Localizacao {
+public class Localizacao extends EntidadeDominio{
     private String predio;
     private String andar;
     private String lado;

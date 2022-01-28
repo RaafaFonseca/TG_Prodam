@@ -91,6 +91,11 @@ public class SalvarDAO extends AbstractDAO{
                 + "VALUES(teq_id, now(), ?, ?, ?, ?, ?);"; 
             break;
 
+            case "model.dominio.Localizacao":
+                script="INSERT INTO localizacoes(loc_id, loc_dt_cadastro, loc_predio, loc_andar, loc_lado, loc_referencia)"
+                + "VALUES(loc_id, now(), ?, ?, ?, ?);";
+            break;
+
             default:
             break;
         }
@@ -121,6 +126,13 @@ public class SalvarDAO extends AbstractDAO{
                     stmt.setString(3, ((TipoEquipamento)entidade).getModelo());
                     stmt.setString(4, ((TipoEquipamento)entidade).getFornecedor());
                     stmt.setString(5, ((TipoEquipamento)entidade).getPolegadas());
+                break;
+
+                case "model.dominio.Localizacao":
+                    stmt.setString(1, ((Localizacao)entidade).getPredio());
+                    stmt.setString(2, ((Localizacao)entidade).getAndar());
+                    stmt.setString(3, ((Localizacao)entidade).getLado());
+                    stmt.setString(4, ((Localizacao)entidade).getReferencia());
                 break;
 
                 default:
