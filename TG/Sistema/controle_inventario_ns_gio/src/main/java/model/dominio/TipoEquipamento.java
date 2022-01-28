@@ -4,7 +4,7 @@ package model.dominio;
  * @author Tiago
  */
  
-public class TipoEquipamento {
+public class TipoEquipamento extends EntidadeDominio{
     private String descricao;
     private String marca;
     private String modelo;

@@ -86,6 +86,11 @@ public class SalvarDAO extends AbstractDAO{
                 + "VALUES (ipr_id, ?, ?);";
             break;
             
+            case "model.dominio.TipoEquipamento":
+                script = "INSERT INTO tipos_equipamento(teq_id, teq_dt_cadastro, teq_descricao, teq_marca, teq_modelo, teq_fornecedor, teq_polegadas)"
+                + "VALUES(teq_id, now(), ?, ?, ?, ?, ?);"; 
+            break;
+
             default:
             break;
         }
@@ -108,6 +113,14 @@ public class SalvarDAO extends AbstractDAO{
                 case "model.dao.relacoes.ImagemPrograma":
                     stmt.setInt(1, ((ImagemPrograma)entidade).getPrograma().getId());
                     stmt.setInt(2, ((ImagemPrograma)entidade).getImagem().getId());
+                break;
+
+                case "model.dominio.TipoEquipamento":
+                    stmt.setString(1, ((TipoEquipamento)entidade).getDescricao());
+                    stmt.setString(2, ((TipoEquipamento)entidade).getMarca());
+                    stmt.setString(3, ((TipoEquipamento)entidade).getModelo());
+                    stmt.setString(4, ((TipoEquipamento)entidade).getFornecedor());
+                    stmt.setString(5, ((TipoEquipamento)entidade).getPolegadas());
                 break;
 
                 default:
