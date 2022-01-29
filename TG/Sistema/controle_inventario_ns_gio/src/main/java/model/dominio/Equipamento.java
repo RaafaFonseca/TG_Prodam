@@ -17,7 +17,7 @@ public class Equipamento {
     private TipoEquipamento tipoEquipamento; 
     private NotaFiscal notaFiscal;
     private Localizacao localizacao;
-    private ContratoEquipamentoTerceiros contratoEquipamentoTerceiros;
+    private ContratoEquipamentoTerceiro contratoEquipamentoTerceiro;
     private List <Ocorrencia> ocorrencias;
 
     public Equipamento() {
@@ -28,14 +28,14 @@ public class Equipamento {
         this.tipoEquipamento = new TipoEquipamento();
         this.notaFiscal = new NotaFiscal();
         this.localizacao = new Localizacao();
-        this.contratoEquipamentoTerceiros = new ContratoEquipamentoTerceiros();
+        this.contratoEquipamentoTerceiro = new ContratoEquipamentoTerceiro();
         this.ocorrencias = new ArrayList<Ocorrencia>();
     }
 
     
     public Equipamento(String serial, String numPatrimonio, String observacao, Boolean locPresenciBoolean,
             TipoEquipamento tipoEquipamento, NotaFiscal notaFiscal, Localizacao localizacao,
-            ContratoEquipamentoTerceiros contratoEquipamentoTerceiros, List<Ocorrencia> ocorrencias) {
+            ContratoEquipamentoTerceiro contratoEquipamentoTerceiro, List<Ocorrencia> ocorrencias) {
         this.serial = serial;
         this.numPatrimonio = numPatrimonio;
         this.observacao = observacao;
@@ -43,7 +43,7 @@ public class Equipamento {
         this.tipoEquipamento = tipoEquipamento;
         this.notaFiscal = notaFiscal;
         this.localizacao = localizacao;
-        this.contratoEquipamentoTerceiros = contratoEquipamentoTerceiros;
+        this.contratoEquipamentoTerceiro = contratoEquipamentoTerceiro;
         this.ocorrencias = ocorrencias;
     }
 
@@ -89,11 +89,11 @@ public class Equipamento {
     public void setLocalizacao(Localizacao localizacao) {
         this.localizacao = localizacao;
     }
-    public ContratoEquipamentoTerceiros getContratoEquipamentoTerceiros() {
-        return contratoEquipamentoTerceiros;
+    public ContratoEquipamentoTerceiro getContratoEquipamentoTerceiro() {
+        return contratoEquipamentoTerceiro;
     }
-    public void setContratoEquipamentoTerceiros(ContratoEquipamentoTerceiros contratoEquipamentoTerceiros) {
-        this.contratoEquipamentoTerceiros = contratoEquipamentoTerceiros;
+    public void setContratoEquipamentoTerceiro(ContratoEquipamentoTerceiro contratoEquipamentoTerceiro) {
+        this.contratoEquipamentoTerceiro = contratoEquipamentoTerceiro;
     }
     public List<Ocorrencia> getOcorrencias() {
         return ocorrencias;

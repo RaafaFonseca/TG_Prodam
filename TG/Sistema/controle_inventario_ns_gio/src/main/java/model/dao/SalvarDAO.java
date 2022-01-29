@@ -101,6 +101,11 @@ public class SalvarDAO extends AbstractDAO{
                 + " VALUES(nof_id, now(), ?, ?);";
             break;
 
+            case "model.dominio.ContratoEquipamentoTerceiro":
+                script="INSERT INTO contrato_equipamento_terceiros(cet_id, cet_fornecedor, cet_dt_inicio, cet_dt_termino)"
+                + "VALUES (cet_id, ?, ?, ?);";
+            break;
+
             default:
             break;
         }
@@ -144,6 +149,13 @@ public class SalvarDAO extends AbstractDAO{
                     java.sql.Date dataSql = new java.sql.Date(((NotaFiscal)entidade).getDate().getTime());
                     stmt.setString(1, ((NotaFiscal)entidade).getNumero());
                     stmt.setDate(2, dataSql);
+                break;
+                case "model.dominio.ContratoEquipamentoTerceiro":
+                    java.sql.Date dataInicio = new java.sql.Date(((ContratoEquipamentoTerceiro)entidade).getDataInicio().getTime());
+                    java.sql.Date dataTermino = new java.sql.Date(((ContratoEquipamentoTerceiro)entidade).getDataFinal().getTime());
+                    stmt.setString(1, ((ContratoEquipamentoTerceiro)entidade).getFornecedor());
+                    stmt.setDate(2, dataInicio);
+                    stmt.setDate(3, dataTermino);
                 break;
 
                 default:
