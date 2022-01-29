@@ -3,6 +3,8 @@ package control.viewhelper;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,6 +42,10 @@ public class VhNotaFiscal implements IViewHelper{
     @Override
     public void setView(Resultado resultado, HttpServletRequest request, HttpServletResponse reponse)
             throws IOException, ServletException {
+
+        RequestDispatcher rD = null;
+        rD = request.getRequestDispatcher("index.jsp");
+        rD.forward(request, reponse);     
         
     }
     

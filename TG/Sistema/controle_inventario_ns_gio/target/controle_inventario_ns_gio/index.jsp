@@ -9,8 +9,13 @@
 </head>
 <body>
 	<form action="Imagem" method="post">
-		<input type="text" name="nome">
-		<input type="submit" name="operacao" value="Salvar">
+		<P><a href="contratoEquipamentoTerceiro.jsp">Contratos de equipamento de terceiros</a></p>
+		<P><a href="equipamento.jsp">Equipamentos</a></p>
+		<P><a href="imagem.jsp">Imagens</a></p>
+		<P><a href="localizacao.jsp">Localizacões</a></p>
+		<P><a href="notaFiscal.jsp">Notas fiscais</a></p>
+		<P><a href="programa.jsp">Programas</a></p>
+		<P><a href="tipoEquipamento.jsp">Tipos de equipamento</a></p>
 	</form>	
 </body>
 </html>

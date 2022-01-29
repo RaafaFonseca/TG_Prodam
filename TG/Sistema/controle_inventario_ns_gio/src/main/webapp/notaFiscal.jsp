@@ -16,6 +16,7 @@
 		<input type="submit" name="operacao" value="Salvar">
         <input type="submit" name="operacao" value="Alterar">
         <input type="submit" name="operacao" value="Excluir">
+		<a href="index.jsp">Home</a>
 	</form>	
 </body>
 </html>
