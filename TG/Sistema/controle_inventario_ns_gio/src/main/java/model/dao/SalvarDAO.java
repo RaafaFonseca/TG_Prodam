@@ -1,6 +1,7 @@
 package model.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -96,6 +97,11 @@ public class SalvarDAO extends AbstractDAO{
                 + "VALUES(loc_id, now(), ?, ?, ?, ?);";
             break;
 
+            case "model.dominio.NotaFiscal":
+                script="INSERT INTO notas_fiscais (nof_id, nof_dt_cadastro, nof_numero, nof_dt)"
+                + " VALUES(nof_id, now(), ?, ?);";
+            break;
+
             default:
             break;
         }
@@ -133,6 +139,11 @@ public class SalvarDAO extends AbstractDAO{
                     stmt.setString(2, ((Localizacao)entidade).getAndar());
                     stmt.setString(3, ((Localizacao)entidade).getLado());
                     stmt.setString(4, ((Localizacao)entidade).getReferencia());
+                break;
+
+                case "model.dominio.NotaFiscal":
+                    stmt.setString(1, ((NotaFiscal)entidade).getNumero());
+                    stmt.setDate(2, (Date) ((NotaFiscal)entidade).getDate());
                 break;
 
                 default:

@@ -8,7 +8,7 @@ package model.dominio;
 
 import java.util.Date;
 
-public class NotaFiscal {
+public class NotaFiscal extends EntidadeDominio{
     private String numero;
     private Date date;
 
