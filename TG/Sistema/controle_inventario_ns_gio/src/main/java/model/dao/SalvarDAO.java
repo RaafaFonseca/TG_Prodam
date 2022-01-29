@@ -1,7 +1,6 @@
 package model.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -142,8 +141,9 @@ public class SalvarDAO extends AbstractDAO{
                 break;
 
                 case "model.dominio.NotaFiscal":
+                    java.sql.Date dataSql = new java.sql.Date(((NotaFiscal)entidade).getDate().getTime());
                     stmt.setString(1, ((NotaFiscal)entidade).getNumero());
-                    stmt.setDate(2, (Date) ((NotaFiscal)entidade).getDate());
+                    stmt.setDate(2, dataSql);
                 break;
 
                 default:

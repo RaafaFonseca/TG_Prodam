@@ -13,8 +13,7 @@ public class NotaFiscal extends EntidadeDominio{
     private Date date;
 
     public NotaFiscal(){
-        this.numero = " ";
-        this.date = new Date(); 
+        this.numero = " "; 
     }
     public NotaFiscal(String numero, Date date){
         this.numero = numero;
