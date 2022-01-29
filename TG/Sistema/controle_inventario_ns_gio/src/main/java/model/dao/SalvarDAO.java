@@ -106,6 +106,12 @@ public class SalvarDAO extends AbstractDAO{
                 + "VALUES (cet_id, ?, ?, ?);";
             break;
 
+            case "model.dominio.Equipamento":
+                script = "INSERT INTO equipamentos(eqp_id, eqp_dt_cadastro, eqp_patrimonio, eqp_serial, eqp_observacao, eqp_loc_presencial, eqp_compartilhado," 
+                + "eqp_loc_id, eqp_nof_id, eqp_teq_id, eqp_cet_id)"
+                + "VALUES(eqp_id, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            break;
+
             default:
             break;
         }
@@ -156,6 +162,18 @@ public class SalvarDAO extends AbstractDAO{
                     stmt.setString(1, ((ContratoEquipamentoTerceiro)entidade).getFornecedor());
                     stmt.setDate(2, dataInicio);
                     stmt.setDate(3, dataTermino);
+                break;
+
+                case "model.dominio.Equipamento":
+                    stmt.setString(1, ((Equipamento)entidade).getNumPatrimonio());
+                    stmt.setString(2, ((Equipamento)entidade).getSerial());
+                    stmt.setString(3, ((Equipamento)entidade).getObservacao());
+                    stmt.setBoolean(4, ((Equipamento)entidade).getLocPresencial());
+                    stmt.setBoolean(5, ((Equipamento)entidade).getCompartilhado());
+                    stmt.setInt(6, ((Equipamento)entidade).getLocalizacao().getId());
+                    stmt.setInt(7, ((Equipamento)entidade).getNotaFiscal().getId());
+                    stmt.setInt(8, ((Equipamento)entidade).getTipoEquipamento().getId());
+                    stmt.setInt(9, ((Equipamento)entidade).getContratoEquipamentoTerceiro().getId());
                 break;
 
                 default:

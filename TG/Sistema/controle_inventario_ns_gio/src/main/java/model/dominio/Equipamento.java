@@ -9,11 +9,12 @@ package model.dominio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Equipamento {
+public class Equipamento extends EntidadeDominio{
     private String serial;
     private String numPatrimonio;
     private String observacao;
-    private Boolean locPresenciBoolean;
+    private Boolean locPresencial;
+    private Boolean compartilhado;
     private TipoEquipamento tipoEquipamento; 
     private NotaFiscal notaFiscal;
     private Localizacao localizacao;
@@ -24,7 +25,8 @@ public class Equipamento {
         this.serial = " ";
         this.numPatrimonio = " ";
         this.observacao = " ";
-        this.locPresenciBoolean = false;
+        this.locPresencial = false;
+        this.compartilhado = false;
         this.tipoEquipamento = new TipoEquipamento();
         this.notaFiscal = new NotaFiscal();
         this.localizacao = new Localizacao();
@@ -32,21 +34,27 @@ public class Equipamento {
         this.ocorrencias = new ArrayList<Ocorrencia>();
     }
 
-    
-    public Equipamento(String serial, String numPatrimonio, String observacao, Boolean locPresenciBoolean,
+    public Equipamento(String serial, String numPatrimonio, String observacao, Boolean locPresencial,
             TipoEquipamento tipoEquipamento, NotaFiscal notaFiscal, Localizacao localizacao,
-            ContratoEquipamentoTerceiro contratoEquipamentoTerceiro, List<Ocorrencia> ocorrencias) {
+            ContratoEquipamentoTerceiro contratoEquipamentoTerceiro, List<Ocorrencia> ocorrencias, Boolean compartilhado) {
         this.serial = serial;
         this.numPatrimonio = numPatrimonio;
         this.observacao = observacao;
-        this.locPresenciBoolean = locPresenciBoolean;
+        this.locPresencial = locPresencial;
         this.tipoEquipamento = tipoEquipamento;
         this.notaFiscal = notaFiscal;
         this.localizacao = localizacao;
         this.contratoEquipamentoTerceiro = contratoEquipamentoTerceiro;
         this.ocorrencias = ocorrencias;
+        this.compartilhado = compartilhado;
     }
 
+    public Boolean getCompartilhado() {
+        return compartilhado;
+    }
+    public void setCompartilhado(Boolean compartilhado) {
+        this.compartilhado = compartilhado;
+    }
     public String getSerial() {
         return serial;
     }
@@ -65,11 +73,11 @@ public class Equipamento {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-    public Boolean getLocPresenciBoolean() {
-        return locPresenciBoolean;
+    public Boolean getLocPresencial() {
+        return locPresencial;
     }
-    public void setLocPresenciBoolean(Boolean locPresenciBoolean) {
-        this.locPresenciBoolean = locPresenciBoolean;
+    public void setLocPresencial(Boolean locPresencial) {
+        this.locPresencial = locPresencial;
     }
     public TipoEquipamento getTipoEquipamento() {
         return tipoEquipamento;
