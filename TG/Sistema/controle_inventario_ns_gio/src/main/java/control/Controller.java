@@ -30,7 +30,8 @@ import util.Resultado;
     "/NotaFiscal", 
     "/ContratoEquipamentoTerceiro", 
     "/Equipamento",
-    "/Ocorrencia"})
+    "/Ocorrencia",
+    "/Tipo"})
     
 public class Controller extends HttpServlet {
     
@@ -55,6 +56,9 @@ public class Controller extends HttpServlet {
         vhs.put("/controle_inventario_ns_gio/NotaFiscal", new VhNotaFiscal());
         vhs.put("/controle_inventario_ns_gio/ContratoEquipamentoTerceiro", new VhContratoEquipamentoTerceiro());
         vhs.put("/controle_inventario_ns_gio/Equipamento", new VhEquipamento());
+        vhs.put("/controle_inventario_ns_gio/Ocorrencia", new VhOcorrencias());
+        vhs.put("/controle_inventario_ns_gio/Tipo", new VhTipo());
+
     }
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

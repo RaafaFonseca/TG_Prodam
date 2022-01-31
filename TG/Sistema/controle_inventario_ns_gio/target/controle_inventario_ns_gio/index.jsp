@@ -16,6 +16,8 @@
 		<P><a href="notaFiscal.jsp">Notas fiscais</a></p>
 		<P><a href="programa.jsp">Programas</a></p>
 		<P><a href="tipoEquipamento.jsp">Tipos de equipamento</a></p>
+		<P><a href="ocorrencias.jsp">Ocorrências</a></p>
+		<P><a href="tipo.jsp">Tipos</a></p>
 	</form>	
 </body>
 </html>

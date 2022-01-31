@@ -13,8 +13,8 @@
 		<P> Serial:               <input type="text" name="serial"></p>
 		<P> Número de patrimônio: <input type="text" name="patrimonio"></p>
 		<P> Observação:           <input type="text" name="observacao"></p>
-		<P>                       <input type="checkbox" name="locPresencial" value="presencial"></p>
-        <P>                       <input type="checkbox" name="compartilhada" value="compartilhada"></p>
+		<P> Presencial:           <input type="checkbox" name="locPresencial" value="presencial"></p>
+        <P> Compartilhado:        <input type="checkbox" name="compartilhada" value="compartilhada"></p>
         <P> Contrato de equipamento de terceiro: <input type="text" name="contEquipTerceiro"></p>
 		<P> Tipo de equipamento:  <input type="text" name="tipoEquipamento"></p>
         <P> Nota Fiscal:          <input type="text" name="notaFiscal"></p>

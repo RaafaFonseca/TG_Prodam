@@ -117,6 +117,21 @@ public class SalvarDAO extends AbstractDAO{
                 + "VALUES(oco_id, now(), ?, ?, ?, ?);";
             break;
 
+            case "model.dominio.TipoAcesso":
+                script = "INSERT INTO tipos_acesso(tac_id, tac_descricao)"
+                 + "VALUES(tac_id, ?);";
+            break;
+            
+            case "model.dominio.RegimeTrabalho":
+                script = "INSERT INTO tipos_contratos(tct_id, tco_descricao)"
+                + "VALUES(tct_id, ?);";
+            break;
+
+            case "model.dominio.TipoColaborador":
+                script = "INSERT INTO tipos_colaborador(tco_id, tco_descricao)"
+                + "VALUES(tco_id, ?);";
+            break;
+
             default:
             break;
         }
@@ -186,6 +201,18 @@ public class SalvarDAO extends AbstractDAO{
                     stmt.setString(2, ((Ocorrencia)entidade).getDescricao());
                     stmt.setInt(3, ((Ocorrencia)entidade).getEquipamento().getId());
                     stmt.setInt(4, ((Ocorrencia)entidade).getColaborador().getId());    
+                break;
+
+                case "model.dominio.TipoAcesso":
+                    stmt.setString(1, ((TipoAcesso)entidade).getDescricao());
+                break;
+
+                case "model.dominio.RegimeTrabalho":
+                    stmt.setString(1, ((RegimeTrabalho)entidade).getDescricao());
+                break;
+
+                case "model.dominio.TipoColaborador":
+                    stmt.setString(1, ((TipoColaborador)entidade).getDescricao());
                 break;
 
                 default:

@@ -5,8 +5,5 @@ package model.dominio;
  */
 
  
-public enum RegimeTrabalho{
-    TELETRABALHO,
-    PRESENCIAL,
-    COWORKING
+public class RegimeTrabalho extends Tipo{
 }

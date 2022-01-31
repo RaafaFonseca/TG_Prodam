@@ -17,7 +17,10 @@ public class Colaborador extends EntidadeDominio{
     private String tipoAcesso;
     private String tipoColaborador;
     private String regimeTrabalho;
-    private GrupoGerencial grupoGerencial;
+    private Presidencia presidencia;
+    private Diretoria diretoria;
+    private Gerencia gerencia;
+    private Nucleo nucleo;
     private List<Emprestimo> equipamentosDisponibilizados;
     private List<ContratoComodato> contratosComodato;
 
@@ -29,15 +32,23 @@ public class Colaborador extends EntidadeDominio{
         this.tipoAcesso = " ";
         this.tipoColaborador = " ";
         this.regimeTrabalho = " ";
-        this.grupoGerencial = null;
         this.equipamentosDisponibilizados = new ArrayList<Emprestimo>();
         this.contratosComodato = new ArrayList<ContratoComodato>();
+        this.presidencia = new Presidencia();
+        this.diretoria = new Diretoria();
+        this.gerencia = new Gerencia();
+        this.nucleo = new Nucleo();
     }
 
+    
+
     public Colaborador(String rf, String nome, String observacao, List<Ocorrencia> ocorrencias, String tipoAcesso,
-            String tipoColaborador, String regimeTrabalho, GrupoGerencial grupoGerencial,
+            String tipoColaborador, String regimeTrabalho,
             List<Emprestimo> equipamentosDisponibilizados,
-            List<ContratoComodato> contratosComodato) {
+            List<ContratoComodato> contratosComodato,
+            Presidencia presidencia, Diretoria diretoria,
+            Gerencia gerencia, Nucleo nucleo) {
+                
         this.rf = rf;
         this.nome = nome;
         this.observacao = observacao;
@@ -45,9 +56,12 @@ public class Colaborador extends EntidadeDominio{
         this.tipoAcesso = tipoAcesso;
         this.tipoColaborador = tipoColaborador;
         this.regimeTrabalho = regimeTrabalho;
-        this.grupoGerencial = grupoGerencial;
         this.equipamentosDisponibilizados = equipamentosDisponibilizados;
         this.contratosComodato = contratosComodato;
+        this.presidencia =  presidencia;
+        this.diretoria =  diretoria;
+        this.gerencia =  gerencia;
+        this.nucleo =  nucleo;
     }
 
     public String getRf() {
@@ -106,14 +120,6 @@ public class Colaborador extends EntidadeDominio{
         this.regimeTrabalho = regimeTrabalho;
     }
 
-    public GrupoGerencial getGrupoGerencial() {
-        return grupoGerencial;
-    }
-
-    public void setGrupoGerencial(GrupoGerencial grupoGerencial) {
-        this.grupoGerencial = grupoGerencial;
-    }
-
     public List<Emprestimo> getEquipamentosDisponibilizados() {
         return equipamentosDisponibilizados;
     }
@@ -128,6 +134,37 @@ public class Colaborador extends EntidadeDominio{
 
     public void setContratosComodato(List<ContratoComodato> contratosComodato) {
         this.contratosComodato = contratosComodato;
+    }
+    public Nucleo getNucleo() {
+        return nucleo;
+    }
+
+    public void setNucleo(Nucleo nucleo) {
+        this.nucleo = nucleo;
+    }
+
+    public Gerencia getGerencia() {
+        return gerencia;
+    }
+
+    public void setGerencia(Gerencia gerencia) {
+        this.gerencia = gerencia;
+    }
+
+    public Diretoria getDiretoria() {
+        return diretoria;
+    }
+
+    public void setDiretoria(Diretoria diretoria) {
+        this.diretoria = diretoria;
+    }
+
+    public Presidencia getPresidencia() {
+        return presidencia;
+    }
+
+    public void setPresidencia(Presidencia presidencia) {
+        this.presidencia = presidencia;
     }
     
 }
