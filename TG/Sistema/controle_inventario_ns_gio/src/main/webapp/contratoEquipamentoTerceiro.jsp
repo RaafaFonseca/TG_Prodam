@@ -3,21 +3,21 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta charset="UTF-8">
-	<title>Home</title>
-</head>
-<body>
-	<form action="ContratoEquipamentoTerceiro" method="post">
-		Fornecedor: <input type="text" name="fornecedor">
-        Data Início: <input type="date" name="dataInicio">
-        Data Término: <input type="date" name="dataTermino">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<title>Home</title>
+	</head>
+	<body>
+		<form action="ContratoEquipamentoTerceiro" method="post">
+			Fornecedor: <input type="text" name="fornecedor">
+			Data Início: <input type="date" name="dataInicio">
+			Data Término: <input type="date" name="dataTermino">
 
-		<input type="submit" name="operacao" value="Salvar">
-        <input type="submit" name="operacao" value="Alterar">
-        <input type="submit" name="operacao" value="Excluir">
-		<a href="index.jsp">Home</a>
-	</form>	
-</body>
+			<input type="submit" name="operacao" value="Salvar">
+			<input type="submit" name="operacao" value="Alterar">
+			<input type="submit" name="operacao" value="Excluir">
+			<a href="index.jsp">Home</a>
+		</form>	
+	</body>
 </html>

@@ -112,6 +112,11 @@ public class SalvarDAO extends AbstractDAO{
                 + "VALUES(eqp_id, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             break;
 
+            case "model.dominio.Ocorrencia":
+                script = "INSERT INTO ocorrencias(oco_id, oco_dt_cadastro, oco_os, oco_descricao, oco_eqp_id, oco_col_id)"
+                + "VALUES(oco_id, now(), ?, ?, ?, ?);";
+            break;
+
             default:
             break;
         }
@@ -174,6 +179,13 @@ public class SalvarDAO extends AbstractDAO{
                     stmt.setInt(7, ((Equipamento)entidade).getNotaFiscal().getId());
                     stmt.setInt(8, ((Equipamento)entidade).getTipoEquipamento().getId());
                     stmt.setInt(9, ((Equipamento)entidade).getContratoEquipamentoTerceiro().getId());
+                break;
+
+                case "model.dominio.Ocorrencia":
+                    stmt.setString(1, ((Ocorrencia)entidade).getOs());
+                    stmt.setString(2, ((Ocorrencia)entidade).getDescricao());
+                    stmt.setInt(3, ((Ocorrencia)entidade).getEquipamento().getId());
+                    stmt.setInt(4, ((Ocorrencia)entidade).getColaborador().getId());    
                 break;
 
                 default:

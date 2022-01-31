@@ -6,7 +6,7 @@
 
 package model.dominio;
 
-public class Ocorrencia {
+public class Ocorrencia extends EntidadeDominio{
     private String os;
     private String descricao;
     private Equipamento equipamento;

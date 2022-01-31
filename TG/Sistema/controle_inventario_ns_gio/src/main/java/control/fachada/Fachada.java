@@ -165,7 +165,7 @@ public class Fachada implements IFachada{
 
     @Override
     public Resultado acessar(EntidadeDominio entidade) {
-        // TODO Auto-generated method stub
+        
         return null;
     }
     

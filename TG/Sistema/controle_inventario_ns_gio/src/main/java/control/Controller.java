@@ -22,7 +22,16 @@ import util.Resultado;
  *
  * @author Tiago
  */
-@WebServlet(urlPatterns = {"/Imagem", "/Programa", "/TipoEquipamento", "/Localizacao", "/NotaFiscal", "/ContratoEquipamentoTerceiro", "/Equipamento"})
+@WebServlet(urlPatterns = {
+    "/Imagem", 
+    "/Programa", 
+    "/TipoEquipamento", 
+    "/Localizacao",
+    "/NotaFiscal", 
+    "/ContratoEquipamentoTerceiro", 
+    "/Equipamento",
+    "/Ocorrencia"})
+    
 public class Controller extends HttpServlet {
     
     private static Map<String, ICommand> commands;

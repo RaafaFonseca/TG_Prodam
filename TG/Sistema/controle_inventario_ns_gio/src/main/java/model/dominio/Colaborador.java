@@ -9,7 +9,7 @@ package model.dominio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Colaborador {
+public class Colaborador extends EntidadeDominio{
     private String rf;
     private String nome;
     private String observacao;
