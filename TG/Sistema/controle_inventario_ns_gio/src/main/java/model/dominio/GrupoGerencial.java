@@ -5,7 +5,7 @@
 
 package model.dominio;
 
-public abstract class GrupoGerencial {
+public abstract class GrupoGerencial extends EntidadeDominio{
     protected String descricao;
     protected String sigla;
     protected Colaborador responsavel;

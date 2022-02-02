@@ -123,13 +123,19 @@ public class SalvarDAO extends AbstractDAO{
             break;
             
             case "model.dominio.RegimeTrabalho":
-                script = "INSERT INTO tipos_contratos(tct_id, tco_descricao)"
+                script = "INSERT INTO tipos_contratos(tct_id, tct_descricao)"
                 + "VALUES(tct_id, ?);";
             break;
 
             case "model.dominio.TipoColaborador":
                 script = "INSERT INTO tipos_colaborador(tco_id, tco_descricao)"
                 + "VALUES(tco_id, ?);";
+            break;
+
+            case "model.dominio.Colaborador":
+                script = "INSERT INTO colaboradores(col_id, col_dt_cadastro, col_rf, col_nome, col_img_id, col_tac_id," 
+                + "col_tco_id, col_tct_id, col_pre_id, col_dir_id, col_ger_id, col_nuc_id)"
+                + "VALUES(col_id, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             break;
 
             default:
@@ -213,6 +219,19 @@ public class SalvarDAO extends AbstractDAO{
 
                 case "model.dominio.TipoColaborador":
                     stmt.setString(1, ((TipoColaborador)entidade).getDescricao());
+                break;
+
+                case "model.dominio.Colaborador":
+                    stmt.setString(1, ((Colaborador)entidade).getRf());
+                    stmt.setString(2, ((Colaborador)entidade).getNome());
+                    stmt.setInt(3, ((Colaborador)entidade).getImagem().getId());
+                    stmt.setInt(4, ((Colaborador)entidade).getTipoAcesso().getId());
+                    stmt.setInt(5, ((Colaborador)entidade).getTipoColaborador().getId());
+                    stmt.setInt(6, ((Colaborador)entidade).getRegimeTrabalho().getId());
+                    stmt.setInt(7, ((Colaborador)entidade).getPresidencia().getId());
+                    stmt.setInt(8, ((Colaborador)entidade).getGerencia().getId());
+                    stmt.setInt(9, ((Colaborador)entidade).getDiretoria().getId());
+                    stmt.setInt(10, ((Colaborador)entidade).getNucleo().getId());
                 break;
 
                 default:

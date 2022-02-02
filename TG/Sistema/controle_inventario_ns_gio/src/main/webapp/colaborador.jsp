@@ -10,16 +10,16 @@
 </head>
 <body>
 	<form action="Colaborador" method="post">
-		Rf: <input type="text" name="rf">
-		Nome: <input type="text" name="nome">
-		Observação: <input type="text" name="observacao">
-		Tipo de acesso: <input type="text" name="tpAcesso">
-		Tipo de colaborador: <input type="text" name="tpColaborador">
-		Regime de trabalho: <input type="text" name="regimeTrabalho">
-		Presidência: <input type="text" name="pre">
-		Diretoria: <input type="text" name="dir">
-		Gerência: <input type="text" name="ger">
-		Núcleo: <input type="text" name="nuc">
+		<p>Rf: <input type="text" name="rf"></p>
+		<p>Nome: <input type="text" name="nome"></p>
+		<p>Imagem: <input type="text" name="imagem"></p>
+		<p>Tipo de acesso: <input type="text" name="tpAcesso"></p>
+		<p>Tipo de colaborador: <input type="text" name="tpColaborador"></p>
+		<p>Regime de trabalho: <input type="text" name="regimeTrabalho"></p>
+		<p>Presidência: <input type="text" name="pre"></p>
+		<p>Diretoria: <input type="text" name="dir"></p>
+		<p>Gerência: <input type="text" name="ger"></p>
+		<p>Núcleo: <input type="text" name="nuc"></p>
 
 		<input type="submit" name="operacao" value="Salvar">
         <input type="submit" name="operacao" value="Alterar">
