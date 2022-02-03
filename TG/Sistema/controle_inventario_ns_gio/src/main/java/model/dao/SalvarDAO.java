@@ -138,6 +138,12 @@ public class SalvarDAO extends AbstractDAO{
                 + "VALUES(col_id, now(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             break;
 
+            case "model.dominio.Emprestimo":
+            script = "INSERT INTO colaboradores_equipamentos(ceq_id, ceq_eqp_id, ceq_dt_disponibilizacao,"
+            +"ceq_dt_devolucao, ceq_col_id, ceq_vigente, ceq_finalidade, ceq_resp_entrega)"
+            +"VALUES(ceq_id, ?, ?, ?, ?, ?, ?, ?);";
+            break;
+
             default:
             break;
         }
@@ -232,6 +238,23 @@ public class SalvarDAO extends AbstractDAO{
                     stmt.setInt(8, ((Colaborador)entidade).getGerencia().getId());
                     stmt.setInt(9, ((Colaborador)entidade).getDiretoria().getId());
                     stmt.setInt(10, ((Colaborador)entidade).getNucleo().getId());
+                break;
+
+                case "model.dominio.Emprestimo":
+                    java.sql.Date dataDisponibilizacao = new java.sql.Date(((Emprestimo)entidade).getDataDisponibilizacao().getTime());
+                    java.sql.Date dataDevolucao = null;
+                   
+                    if(((Emprestimo)entidade).getDataDevolucao() != null){
+                        dataDevolucao = new java.sql.Date(((Emprestimo)entidade).getDataDevolucao().getTime());
+                    }
+
+                    stmt.setInt(1, ((Emprestimo)entidade).getEquipamento().getId());
+                    stmt.setDate(2, dataDisponibilizacao);
+                    stmt.setDate(3, dataDevolucao);
+                    stmt.setInt(4, ((Emprestimo)entidade).getColaborador().getId());
+                    stmt.setBoolean(5, ((Emprestimo)entidade).isVigente());
+                    stmt.setString(6, ((Emprestimo)entidade).getFinalidade());
+                    stmt.setInt(7, ((Emprestimo)entidade).getRespEntrega().getId());
                 break;
 
                 default:

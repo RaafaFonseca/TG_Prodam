@@ -32,7 +32,8 @@ import util.Resultado;
     "/Equipamento",
     "/Ocorrencia",
     "/Tipo",
-    "/Colaborador"})
+    "/Colaborador",
+    "/Emprestimo"})
     
 public class Controller extends HttpServlet {
     
@@ -60,6 +61,7 @@ public class Controller extends HttpServlet {
         vhs.put("/controle_inventario_ns_gio/Ocorrencia", new VhOcorrencias());
         vhs.put("/controle_inventario_ns_gio/Tipo", new VhTipo());
         vhs.put("/controle_inventario_ns_gio/Colaborador", new VhColaborador());
+        vhs.put("/controle_inventario_ns_gio/Emprestimo", new VhEmprestimo());
 
     }
     /**

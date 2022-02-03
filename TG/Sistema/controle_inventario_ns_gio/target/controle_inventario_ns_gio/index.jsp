@@ -19,6 +19,7 @@
 		<P><a href="ocorrencias.jsp">Ocorrências</a></p>
 		<P><a href="tipo.jsp">Tipos</a></p>
 		<P><a href="colaborador.jsp">Colaboradores</a></p>
+		<P><a href="emprestimo.jsp">Emprestimos</a></p>
 	</form>	
 </body>
 </html>
