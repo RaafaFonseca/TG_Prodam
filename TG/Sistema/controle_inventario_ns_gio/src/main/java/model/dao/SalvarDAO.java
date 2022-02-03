@@ -139,9 +139,9 @@ public class SalvarDAO extends AbstractDAO{
             break;
 
             case "model.dominio.Emprestimo":
-            script = "INSERT INTO colaboradores_equipamentos(ceq_id, ceq_eqp_id, ceq_dt_disponibilizacao,"
-            +"ceq_dt_devolucao, ceq_col_id, ceq_vigente, ceq_finalidade, ceq_resp_entrega)"
-            +"VALUES(ceq_id, ?, ?, ?, ?, ?, ?, ?);";
+                script = "INSERT INTO colaboradores_equipamentos(ceq_id, ceq_eqp_id, ceq_dt_disponibilizacao,"
+                +"ceq_dt_devolucao, ceq_col_id, ceq_vigente, ceq_finalidade, ceq_resp_entrega)"
+                +"VALUES(ceq_id, ?, ?, ?, ?, ?, ?, ?);";
             break;
 
             default:

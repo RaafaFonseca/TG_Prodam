@@ -111,22 +111,23 @@ public class Fachada implements IFachada{
     @Override
     public Resultado consultar(EntidadeDominio entidade) {
         resultado = new Resultado();
-        /*
+        
         String nmClass = entidade.getClass().getName();
            
         String msg = aplicarRegras(entidade, "CONSULTAR");
 
         if(msg == null){
-            IDAO dao = daos.get(nmClass);
+            ConsultarDAO consultarDAO = new ConsultarDAO();
+            consultarDAO.consultarAll(entidade);
             try{
-                resultado.setEntidades(dao.consultar(entidade));
+                resultado.setEntidades(consultarDAO.consultarAll(entidade));
                 
             }catch(Exception ex){
                 ex.printStackTrace();
                 resultado.setMsg("Não foi possível consultar o(a)" + nmClass);
             }   
         }  
-        */
+        
         return resultado;
         
     }
