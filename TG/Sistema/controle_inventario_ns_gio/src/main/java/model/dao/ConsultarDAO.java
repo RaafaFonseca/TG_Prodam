@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
 import model.dominio.*;
 import util.Conectar;
 
@@ -43,7 +44,7 @@ public class ConsultarDAO extends AbstractDAO{
 
             rs = stmt.executeQuery();
 
-            construirEntidade(rs, entidadesDominio);
+            construirEntidade(rs, entidadesDominio, entidade);
 
             return entidadesDominio;
         }catch(Exception ex){
@@ -63,7 +64,7 @@ public class ConsultarDAO extends AbstractDAO{
             break;
 
             case "model.dominio.Imagem":
-                script = "";
+                script = "SELECT * FROM imagens;";
             break;
 
             case "model.dao.relacoes.ImagemPrograma":
@@ -75,15 +76,15 @@ public class ConsultarDAO extends AbstractDAO{
             break;
 
             case "model.dominio.Localizacao":
-                script="";
+                script = "SELECT * FROM localizacoes;";
             break;
 
             case "model.dominio.NotaFiscal":
-                script="";
+                script = "SELECT * FROM notas_fiscais;";
             break;
 
             case "model.dominio.ContratoEquipamentoTerceiro":
-                script="";
+                script = "";
             break;
 
             case "model.dominio.Equipamento":
@@ -190,8 +191,7 @@ public class ConsultarDAO extends AbstractDAO{
        
     }
 
-    public void construirEntidade(ResultSet rs, List<EntidadeDominio> entidades){
-        EntidadeDominio entidade = new EntidadeDominio();
+    public void construirEntidade(ResultSet rs, List<EntidadeDominio> entidades, EntidadeDominio entidade){
         try{
             switch (entidade.getClass().getName()){
                 case "model.dominio.Programa":
@@ -199,7 +199,14 @@ public class ConsultarDAO extends AbstractDAO{
                 break;
 
                 case "model.dominio.Imagem":
-                
+                    while(rs.next()){
+                        entidade = new Imagem();
+                        
+                        ((Imagem)entidade).setId(rs.getInt("img_id"));
+                        ((Imagem)entidade).setDescricao(rs.getString("img_descricao"));
+         
+                        entidades.add(entidade);
+                    }
                 break;
 
                 case "model.dao.relacoes.ImagemPrograma":
@@ -208,23 +215,39 @@ public class ConsultarDAO extends AbstractDAO{
                 
                 case "model.dominio.TipoEquipamento":
                     while(rs.next()){
+                        entidade = new TipoEquipamento();
                         ((TipoEquipamento)entidade).setId(rs.getInt("teq_id"));
                         ((TipoEquipamento)entidade).setDescricao(rs.getString("teq_descricao"));
                         ((TipoEquipamento)entidade).setMarca(rs.getString("teq_marca"));
                         ((TipoEquipamento)entidade).setModelo(rs.getString("teq_modelo"));
                         ((TipoEquipamento)entidade).setFornecedor(rs.getString("teq_fornecedor"));
                         ((TipoEquipamento)entidade).setPolegadas(rs.getString("teq_polegadas"));
-
+                        
                         entidades.add(entidade);
                     }
                 break;
 
                 case "model.dominio.Localizacao":
-                
+                    while(rs.next()){
+                        entidade = new Localizacao();
+                        ((Localizacao)entidade).setId(rs.getInt("loc_id"));
+                        ((Localizacao)entidade).setPredio(rs.getString("loc_predio"));
+                        ((Localizacao)entidade).setAndar(rs.getString("loc_andar"));
+                        ((Localizacao)entidade).setLado(rs.getString("loc_lado"));
+                        
+                        entidades.add(entidade);
+                    }
                 break;
 
                 case "model.dominio.NotaFiscal":
-                    
+                    while(rs.next()){
+                        entidade = new NotaFiscal();
+                        ((NotaFiscal)entidade).setId(rs.getInt("nof_id"));
+                        ((NotaFiscal)entidade).setNumero(rs.getString("nof_numero"));
+                        ((NotaFiscal)entidade).setDate(rs.getDate("nof_dt"));
+                        
+                        entidades.add(entidade);
+                    }
                 break;
 
                 case "model.dominio.ContratoEquipamentoTerceiro":

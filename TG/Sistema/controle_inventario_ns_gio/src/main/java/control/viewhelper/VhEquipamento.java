@@ -37,9 +37,9 @@ public class VhEquipamento implements IViewHelper{
             }
 
             equipamento.getContratoEquipamentoTerceiro().setId(Integer.parseInt(request.getParameter("contEquipTerceiro")));
-            equipamento.getTipoEquipamento().setId(1);
-            equipamento.getNotaFiscal().setId(1);
-            equipamento.getLocalizacao().setId(1);
+            equipamento.getTipoEquipamento().setId(Integer.parseInt(request.getParameter("tipoEquipamento")));
+            equipamento.getNotaFiscal().setId(Integer.parseInt(request.getParameter("notaFiscal")));;
+            equipamento.getLocalizacao().setId(Integer.parseInt(request.getParameter("localizacao")));;
 
         }
 
