@@ -96,19 +96,35 @@ public class ConsultarDAO extends AbstractDAO{
             break;
 
             case "model.dominio.TipoAcesso":
-                script = "";
+                script = "SELECT * FROM tipos_acesso;";
             break;
             
             case "model.dominio.RegimeTrabalho":
-                script = "";
+                script = "SELECT * FROM tipos_contratos;";
             break;
 
             case "model.dominio.TipoColaborador":
-                script = "";
+                script = "SELECT * FROM tipos_colaborador;";
             break;
 
             case "model.dominio.Colaborador":
                 script = "";
+            break;
+
+            case "model.dominio.Presidencia":
+                script = "SELECT * FROM presidencias;";
+            break;
+
+            case "model.dominio.Diretoria":
+                script = "SELECT * FROM diretorias;";
+            break;
+
+            case "model.dominio.Gerencia":
+                script = "SELECT * FROM gerencias;";
+            break;
+
+            case "model.dominio.Nucleo":
+                script = "SELECT * FROM nucleos;";
             break;
 
             case "model.dominio.Emprestimo":
@@ -263,15 +279,36 @@ public class ConsultarDAO extends AbstractDAO{
                 break;
 
                 case "model.dominio.TipoAcesso":
-                    
+                    while(rs.next()){
+                        entidade = new TipoAcesso();
+                        
+                        ((TipoAcesso)entidade).setId(rs.getInt("tac_id"));
+                        ((TipoAcesso)entidade).setDescricao(rs.getString("tac_descricao"));
+        
+                        entidades.add(entidade);
+                    }
                 break;
                 
                 case "model.dominio.RegimeTrabalho":
-                
+                    while(rs.next()){
+                        entidade = new RegimeTrabalho();
+                        
+                        ((RegimeTrabalho)entidade).setId(rs.getInt("tct_id"));
+                        ((RegimeTrabalho)entidade).setDescricao(rs.getString("tct_descricao"));
+        
+                        entidades.add(entidade);
+                }
                 break;
 
                 case "model.dominio.TipoColaborador":
-                
+                    while(rs.next()){
+                        entidade = new TipoColaborador();
+                        
+                        ((TipoColaborador)entidade).setId(rs.getInt("tco_id"));
+                        ((TipoColaborador)entidade).setDescricao(rs.getString("tco_descricao"));
+        
+                        entidades.add(entidade);
+                    }
                 break;
 
                 case "model.dominio.Colaborador":
@@ -280,6 +317,50 @@ public class ConsultarDAO extends AbstractDAO{
 
                 case "model.dominio.Emprestimo":
                 
+                break;
+
+                case "model.dominio.Presidencia":
+                    while(rs.next()){
+                        entidade = new Presidencia();
+                        
+                        ((Presidencia)entidade).setId(rs.getInt("pre_id"));
+                        ((Presidencia)entidade).setDescricao(rs.getString("pre_descricao"));
+                        ((Presidencia)entidade).setSigla(rs.getString("pre_sigla"));
+                        entidades.add(entidade);
+                    }
+                break;
+
+                case "model.dominio.Diretoria":
+                    while(rs.next()){
+                        entidade = new Diretoria();
+                        
+                        ((Diretoria)entidade).setId(rs.getInt("dir_id"));
+                        ((Diretoria)entidade).setDescricao(rs.getString("dir_descricao"));
+                        ((Diretoria)entidade).setSigla(rs.getString("dir_sigla"));
+                        entidades.add(entidade);
+                    }
+                break;
+
+                case "model.dominio.Gerencia":
+                    while(rs.next()){
+                        entidade = new Gerencia();
+                        
+                        ((Gerencia)entidade).setId(rs.getInt("ger_id"));
+                        ((Gerencia)entidade).setDescricao(rs.getString("ger_descricao"));
+                        ((Gerencia)entidade).setSigla(rs.getString("ger_sigla"));
+                        entidades.add(entidade);
+                    } 
+                break;
+
+                case "model.dominio.Nucleo":
+                    while(rs.next()){
+                        entidade = new Nucleo();
+                        
+                        ((Nucleo)entidade).setId(rs.getInt("nuc_id"));
+                        ((Nucleo)entidade).setDescricao(rs.getString("nuc_descricao"));
+                        ((Nucleo)entidade).setSigla(rs.getString("nuc_sigla"));
+                        entidades.add(entidade);
+                    } 
                 break;
 
                 default:

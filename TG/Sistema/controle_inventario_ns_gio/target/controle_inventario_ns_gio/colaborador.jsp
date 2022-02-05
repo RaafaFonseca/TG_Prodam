@@ -37,14 +37,157 @@
 			%>
 		</select></p>
 
-		<p>Tipo de acesso: <input type="text" name="tpAcesso"></p>
-		<p>Tipo de colaborador: <input type="text" name="tpColaborador"></p>
-		<p>Regime de trabalho: <input type="text" name="regimeTrabalho"></p>
-		<p>Presidência: <input type="text" name="pre"></p>
-		<p>Diretoria: <input type="text" name="dir"></p>
-		<p>Gerência: <input type="text" name="ger"></p>
-		<p>Núcleo: <input type="text" name="nuc"></p>
+		<p>Tipo de acesso: <select name="tpAcesso">
+			<option value="">Selecione...</option>
+			<%
+				sbRegistro = new StringBuilder();
+				TipoAcesso tpAcesso = new TipoAcesso();
+				listarOpcoes = new ListarOpcoes();
+                resultado = listarOpcoes.processar(tpAcesso);
+				entidades = resultado.getEntidades();
 
+				for(int i = 0; i < entidades.size(); i++){	
+					tpAcesso = (TipoAcesso)entidades.get(i);
+					sbRegistro.setLength(0);
+					sbRegistro.append("<option value='" + tpAcesso.getId() + "'>"
+						+ tpAcesso.getDescricao() + "</option>");
+					
+					out.print(sbRegistro.toString());
+				}
+
+			%>
+		</select></p>
+
+		<p>Tipo de colaborador: <select name="tpColaborador">
+			<option value="">Selecione...</option>
+			<%
+				sbRegistro = new StringBuilder();
+				TipoColaborador tpColaborador = new TipoColaborador();
+				listarOpcoes = new ListarOpcoes();
+                resultado = listarOpcoes.processar(tpColaborador);
+				entidades = resultado.getEntidades();
+
+				for(int i = 0; i < entidades.size(); i++){	
+					tpColaborador = (TipoColaborador)entidades.get(i);
+					sbRegistro.setLength(0);
+					sbRegistro.append("<option value='" + tpColaborador.getId() + "'>"
+						+ tpColaborador.getDescricao() + "</option>");
+					
+					out.print(sbRegistro.toString());
+				}
+
+			%>
+		</select></p>
+				
+		<p>Regime de trabalho: <select name="regimeTrabalho">
+			<option value="">Selecione...</option>
+			<%
+				sbRegistro = new StringBuilder();
+				RegimeTrabalho rmTrabalho = new RegimeTrabalho();
+				listarOpcoes = new ListarOpcoes();
+                resultado = listarOpcoes.processar(rmTrabalho);
+				entidades = resultado.getEntidades();
+
+				for(int i = 0; i < entidades.size(); i++){	
+					rmTrabalho = (RegimeTrabalho)entidades.get(i);
+					sbRegistro.setLength(0);
+					sbRegistro.append("<option value='" + rmTrabalho.getId() + "'>"
+						+ rmTrabalho.getDescricao() + "</option>");
+					
+					out.print(sbRegistro.toString());
+				}
+
+			%>
+		</select></p>
+
+		<p>Presidência: <select name="pre">
+			<option value="">Selecione...</option>
+			<%
+				sbRegistro = new StringBuilder();
+				Presidencia pre = new Presidencia();
+				listarOpcoes = new ListarOpcoes();
+                resultado = listarOpcoes.processar(pre);
+				entidades = resultado.getEntidades();
+
+				for(int i = 0; i < entidades.size(); i++){	
+					pre = (Presidencia)entidades.get(i);
+					sbRegistro.setLength(0);
+					sbRegistro.append("<option value='" + pre.getId() + "'>"
+						+ pre.getSigla() + " - "
+						+ pre.getDescricao() + "</option>");
+					
+					out.print(sbRegistro.toString());
+				}
+
+			%>
+		</select></p>
+
+		<p>Diretoria: <select name="dir">
+			<option value="">Selecione...</option>
+			<%
+				sbRegistro = new StringBuilder();
+				Diretoria dir = new Diretoria();
+				listarOpcoes = new ListarOpcoes();
+                resultado = listarOpcoes.processar(dir);
+				entidades = resultado.getEntidades();
+
+				for(int i = 0; i < entidades.size(); i++){	
+					dir = (Diretoria)entidades.get(i);
+					sbRegistro.setLength(0);
+					sbRegistro.append("<option value='" + dir.getId() + "'>"
+						+ dir.getSigla() + " - "
+						+ dir.getDescricao() + "</option>");
+					
+					out.print(sbRegistro.toString());
+				}
+
+			%>
+		</select></p>
+
+		<p>Gerencia: <select name="ger">
+			<option value="">Selecione...</option>
+			<%
+				sbRegistro = new StringBuilder();
+				Gerencia ger = new Gerencia();
+				listarOpcoes = new ListarOpcoes();
+                resultado = listarOpcoes.processar(ger);
+				entidades = resultado.getEntidades();
+
+				for(int i = 0; i < entidades.size(); i++){	
+					ger = (Gerencia)entidades.get(i);
+					sbRegistro.setLength(0);
+					sbRegistro.append("<option value='" + ger.getId() + "'>"
+						+ ger.getSigla() + " - "
+						+ ger.getDescricao() + "</option>");
+					
+					out.print(sbRegistro.toString());
+				}
+
+			%>
+		</select></p>
+
+		<p>Núcleo: <select name="nuc">
+			<option value="">Selecione...</option>
+			<%
+				sbRegistro = new StringBuilder();
+				Nucleo nuc = new Nucleo();
+				listarOpcoes = new ListarOpcoes();
+                resultado = listarOpcoes.processar(nuc);
+				entidades = resultado.getEntidades();
+
+				for(int i = 0; i < entidades.size(); i++){	
+					nuc = (Nucleo)entidades.get(i);
+					sbRegistro.setLength(0);
+					sbRegistro.append("<option value='" + nuc.getId() + "'>"
+						+ nuc.getSigla() + " - "
+						+ nuc.getDescricao() + "</option>");
+					
+					out.print(sbRegistro.toString());
+				}
+
+			%>
+		</select></p>
+		
 		<input type="submit" name="operacao" value="Salvar">
         <input type="submit" name="operacao" value="Alterar">
         <input type="submit" name="operacao" value="Excluir">
