@@ -88,7 +88,7 @@ public class ConsultarDAO extends AbstractDAO{
             break;
 
             case "model.dominio.Equipamento":
-                script = "";
+                script = "SELECT * FROM equipamentos;";
             break;
 
             case "model.dominio.Ocorrencia":
@@ -271,7 +271,21 @@ public class ConsultarDAO extends AbstractDAO{
                 break;
 
                 case "model.dominio.Equipamento":
-                    
+                    while(rs.next()){
+                        entidade = new Equipamento();
+                        ((Equipamento)entidade).setId(rs.getInt("eqp_id"));
+                        ((Equipamento)entidade).setSerial(rs.getString("eqp_serial"));
+                        ((Equipamento)entidade).setNumPatrimonio(rs.getString("eqp_patrimonio"));
+                        ((Equipamento)entidade).setObservacao(rs.getString("eqp_observacao"));
+                        ((Equipamento)entidade).setLocPresencial(rs.getBoolean("eqp_loc_presencial"));
+                        ((Equipamento)entidade).setCompartilhado(rs.getBoolean("eqp_compartilhado"));
+                        ((Equipamento)entidade).getContratoEquipamentoTerceiro().setId((rs.getInt("eqp_cet_id")));
+                        ((Equipamento)entidade).getTipoEquipamento().setId((rs.getInt("eqp_teq_id")));
+                        ((Equipamento)entidade).getNotaFiscal().setId((rs.getInt("eqp_nof_id")));
+                        ((Equipamento)entidade).getLocalizacao().setId((rs.getInt("eqp_loc_id")));
+
+                        entidades.add(entidade);
+                    }
                 break;
 
                 case "model.dominio.Ocorrencia":

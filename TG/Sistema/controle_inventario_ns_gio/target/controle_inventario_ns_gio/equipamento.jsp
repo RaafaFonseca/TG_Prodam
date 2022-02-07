@@ -48,7 +48,6 @@
 			<%
 				sbRegistro = new StringBuilder();
 				NotaFiscal ntFiscal = new NotaFiscal();
-				listarOpcoes = new ListarOpcoes();
                 resultado = listarOpcoes.processar(ntFiscal);
 				entidades = resultado.getEntidades();
 
@@ -69,7 +68,6 @@
 			<%
 				sbRegistro = new StringBuilder();
 				Localizacao local = new Localizacao();
-				listarOpcoes = new ListarOpcoes();
                 resultado = listarOpcoes.processar(local);
 				entidades = resultado.getEntidades();
 
@@ -91,6 +89,115 @@
         <input type="submit" name="operacao" value="Alterar">
         <input type="submit" name="operacao" value="Excluir">
 		<a href="index.jsp">Home</a>
+
+		<br>
+		<br>
+		<TABLE BORDER="5"    WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
+			<TR>
+				<TH>ID:</TH>
+				<TH>Serial:</TH>
+				<TH>Número de patrimônio:</TH>
+				<TH>Observação:</TH>
+				<TH>Presencial:</TH>
+				<TH>Compartilhado:</TH>
+				<TH>Contrato de equipamento de terceiro:</TH>
+				<TH>Tipo de equipamento:</TH>
+				<TH>Nota fiscal:</TH>
+				<TH>Localização:</TH>
+			</TR>
+
+			<%
+				Equipamento equipamentos = new Equipamento();
+				resultado = listarOpcoes.processar(equipamentos);
+				entidades = resultado.getEntidades();
+				sbRegistro = new StringBuilder();
+				StringBuilder sbLink = new StringBuilder();
+
+				if(entidades != null){
+					for(int i = 0; i < entidades.size(); i++){
+						equipamentos = (Equipamento)entidades.get(i);
+						sbRegistro.setLength(0);
+						sbLink.setLength(0);
+
+						sbRegistro.append("<TR ALIGN='CENTER'>");
+						
+						sbLink.append("<a href=Equipamento?");
+						sbLink.append("idEquipamento=");
+						sbLink.append(equipamentos.getId());						
+						sbLink.append("&");
+						sbLink.append("operacao=");
+						sbLink.append("Visualizar");												
+						sbLink.append(">");
+						
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());	
+						sbRegistro.append(equipamentos.getId());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+						
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getSerial());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+						
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getNumPatrimonio());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+						
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getObservacao());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+						
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getLocPresencial());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getCompartilhado());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getContratoEquipamentoTerceiro().getId());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getTipoEquipamento().getId());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getNotaFiscal().getId());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+
+						sbRegistro.append("<TD>");
+						sbRegistro.append(sbLink.toString());				
+						sbRegistro.append(equipamentos.getLocalizacao().getId());
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+						
+						sbRegistro.append("</TR>");
+										
+						out.print(sbRegistro.toString());
+
+					} 
+
+				}	
+			%>
+		</TABLE>	
 	</form>	
 </body>
 </html>
