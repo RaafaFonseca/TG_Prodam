@@ -14,12 +14,35 @@
 	<title>Home</title>
 </head>
 <body>
+	<%
+		Equipamento equipa = (Equipamento) session.getAttribute("equipamento");
+	%>
 	<form action="Equipamento" method="post">
 
-		<P> Serial:               <input type="text" name="serial"></p>
-		<P> Número de patrimônio: <input type="text" name="patrimonio"></p>
-		<P> Observação:           <input type="text" name="observacao"></p>
-		<P> Presencial:           <input type="checkbox" name="locPresencial" value="presencial"></p>
+		<P> Serial: <input type="text" name="serial" value="
+		<%
+			if(equipa != null) out.print("'" + equipa.getSerial() + "'");
+		%>
+		"></p>
+
+		<P> Número de patrimônio: <input type="text" name="patrimonio" value="
+		<%
+			if(equipa != null) out.print("'" + equipa.getNumPatrimonio() + "'");
+		%>
+		"></p>
+
+		<P> Observação: <input type="text" name="observacao" value="
+		<%
+			if(equipa != null) out.print("'" + equipa.getObservacao() + "'");
+		%>
+		"></p>
+
+		<P> Presencial: <input type="checkbox" name="locPresencial" value="presencial" value="
+		<%
+			if(equipa != null) out.print("'" + equipa.getSerial() + "'");
+		%>
+		"></p>
+		
         <P> Compartilhado:        <input type="checkbox" name="compartilhada" value="compartilhada"></p>
         <P> Contrato de equipamento de terceiro: <input type="text" name="contEquipTerceiro"></p>
 		Tipo de equipmento : <select name="tipoEquipamento">
@@ -94,6 +117,7 @@
 		<br>
 		<TABLE BORDER="5"    WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
 			<TR>
+				<TH></TH>
 				<TH>ID:</TH>
 				<TH>Serial:</TH>
 				<TH>Número de patrimônio:</TH>
@@ -129,6 +153,13 @@
 						sbLink.append("Visualizar");												
 						sbLink.append(">");
 						
+						sbRegistro.append("<TD>");
+						sbRegistro.append("<input type='checkbox' name='ckSelecionado' value='");	
+						sbRegistro.append(equipamentos.getId());
+						sbRegistro.append("'> ");
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+
 						sbRegistro.append("<TD>");
 						sbRegistro.append(sbLink.toString());	
 						sbRegistro.append(equipamentos.getId());

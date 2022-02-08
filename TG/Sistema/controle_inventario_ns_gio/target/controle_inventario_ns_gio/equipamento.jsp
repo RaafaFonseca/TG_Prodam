@@ -94,6 +94,7 @@
 		<br>
 		<TABLE BORDER="5"    WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
 			<TR>
+				<TH></TH>
 				<TH>ID:</TH>
 				<TH>Serial:</TH>
 				<TH>Número de patrimônio:</TH>
@@ -129,6 +130,13 @@
 						sbLink.append("Visualizar");												
 						sbLink.append(">");
 						
+						sbRegistro.append("<TD>");
+						sbRegistro.append("<input type='checkbox' name='ckSelecionado' value='");	
+						sbRegistro.append(equipamentos.getId());
+						sbRegistro.append("'> ");
+						sbRegistro.append("</a>");				
+						sbRegistro.append("</TD>");
+
 						sbRegistro.append("<TD>");
 						sbRegistro.append(sbLink.toString());	
 						sbRegistro.append(equipamentos.getId());
