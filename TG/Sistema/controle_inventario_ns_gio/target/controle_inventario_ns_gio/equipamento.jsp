@@ -14,14 +14,47 @@
 	<title>Home</title>
 </head>
 <body>
+	<%
+		Equipamento equipa = (Equipamento) session.getAttribute("equipamento");
+	%>
 	<form action="Equipamento" method="post">
 
-		<P> Serial:               <input type="text" name="serial"></p>
-		<P> Número de patrimônio: <input type="text" name="patrimonio"></p>
-		<P> Observação:           <input type="text" name="observacao"></p>
-		<P> Presencial:           <input type="checkbox" name="locPresencial" value="presencial"></p>
-        <P> Compartilhado:        <input type="checkbox" name="compartilhada" value="compartilhada"></p>
-        <P> Contrato de equipamento de terceiro: <input type="text" name="contEquipTerceiro"></p>
+		<P> Serial: <input type="text" name="serial" value =
+		<%
+			if(equipa != null) out.print("'" + equipa.getSerial() + "'");
+		%>
+		></p>
+
+		<P> Número de patrimônio: <input type="text" name="patrimonio" value=
+		<%
+			if(equipa != null) out.print("'" + equipa.getNumPatrimonio() + "'");
+		%>
+		></p>
+
+		<P> Observação: <input type="text" name="observacao" value=
+		<%
+			if(equipa != null) out.print("'" + equipa.getObservacao() + "'");
+		%>
+		></p>
+
+		<P> Presencial: <input type="checkbox" name="locPresencial" value="presencial" 
+		<%
+			if(equipa != null) out.print("checked");
+		%>
+		></p>
+		
+        <P> Compartilhado: <input type="checkbox" name="compartilhada" value="compartilhada"
+		<%
+			if(equipa != null) out.print("checked");
+		%>
+		></p>
+
+        <P> Contrato de equipamento de terceiro: <input type="text" name="contEquipTerceiro" value=
+		<%
+			if(equipa != null) out.print("'" + equipa.getContratoEquipamentoTerceiro().getId() + "'");
+		%>
+		></p>
+
 		Tipo de equipmento : <select name="tipoEquipamento">
 			<option value="">Selecione...</option>
 			<%
@@ -35,8 +68,14 @@
 					TipoEquipamento tipoEquip = (TipoEquipamento)entidades.get(i);
 					sbRegistro.setLength(0);
 					sbRegistro.append("<option value='" + tipoEquip.getId() + "'>"
-						+ tipoEquip.getDescricao() + " " + tipoEquip.getMarca() + "</option>");
+						+ tipoEquip.getDescricao() + " " + tipoEquip.getMarca() + "</option");
 					
+					if(equipa != null && equipa.getTipoEquipamento().getId() == tipoEquip.getId()){
+						sbRegistro.append("selected");
+					}
+
+					sbRegistro.append(">");
+
 					out.print(sbRegistro.toString());
 				}
 
@@ -55,7 +94,13 @@
 					ntFiscal = (NotaFiscal)entidades.get(i);
 					sbRegistro.setLength(0);
 					sbRegistro.append("<option value='" + ntFiscal.getId() + "'>"
-						+ ntFiscal.getNumero() + "</option>");
+						+ ntFiscal.getNumero() + "</option");
+					
+					if(equipa != null && equipa.getNotaFiscal().getId() == ntFiscal.getId()){
+						sbRegistro.append("selected");
+					}
+
+					sbRegistro.append(">");
 					
 					out.print(sbRegistro.toString());
 				}
@@ -77,7 +122,13 @@
 					sbRegistro.append("<option value='" + local.getId() + "'>"
 						+ local.getAndar() + "º andar - "
 						+ local.getPredio() + " - " 
-						+ local.getLado() + "</option>");
+						+ local.getLado() + "</option");
+
+					if(equipa != null && equipa.getLocalizacao().getId() == local.getId()){
+						sbRegistro.append("selected");
+					}
+					
+					sbRegistro.append(">");	
 					
 					out.print(sbRegistro.toString());
 				}
@@ -113,6 +164,7 @@
 				entidades = resultado.getEntidades();
 				sbRegistro = new StringBuilder();
 				StringBuilder sbLink = new StringBuilder();
+				request.getSession().setAttribute("resultado",resultado);
 
 				if(entidades != null){
 					for(int i = 0; i < entidades.size(); i++){
@@ -205,7 +257,7 @@
 
 				}	
 			%>
-		</TABLE>	
+		</table>	
 	</form>	
 </body>
 </html>

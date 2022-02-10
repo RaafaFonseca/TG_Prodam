@@ -6,6 +6,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import model.dominio.EntidadeDominio;
 import model.dominio.Equipamento;
 import util.*;
@@ -41,8 +43,22 @@ public class VhEquipamento implements IViewHelper{
             equipamento.getNotaFiscal().setId(Integer.parseInt(request.getParameter("notaFiscal")));;
             equipamento.getLocalizacao().setId(Integer.parseInt(request.getParameter("localizacao")));;
 
+        }else if (operacao.equals("Visualizar")){
+            HttpSession session = request.getSession();
+            Resultado resultado = (Resultado)session.getAttribute("resultado");
+            String idEquipamento = request.getParameter("idEquipamento");
+            int id = 0;
+            
+            if(Contem.contemDado(idEquipamento)){
+                id = Integer.parseInt(idEquipamento);
+            }
+            
+            for(EntidadeDominio ed : resultado.getEntidades()){
+                if(ed.getId() == id){
+                    equipamento = (Equipamento)ed;
+                }
+            }
         }
-
         return equipamento;
     }
 
@@ -51,7 +67,17 @@ public class VhEquipamento implements IViewHelper{
             throws IOException, ServletException {
         
         RequestDispatcher rD = null;
-        rD = request.getRequestDispatcher("index.jsp");
+        
+        String operacao = request.getParameter("operacao");
+        
+        if(operacao.equals("Salvar")){
+            rD = request.getRequestDispatcher("index.jsp");
+        }
+        if(operacao.equals("Visualizar")){
+            request.setAttribute("equipamento", resultado.getEntidades().get(0));
+            rD = request.getRequestDispatcher("equipamento.jsp");
+        }
+
         rD.forward(request, reponse);
 
     }

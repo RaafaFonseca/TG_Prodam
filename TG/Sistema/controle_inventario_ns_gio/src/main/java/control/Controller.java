@@ -48,6 +48,7 @@ public class Controller extends HttpServlet {
         commands.put("Alterar", new AlterarCommand());  
         commands.put("Excluir", new ExcluirCommand());
         commands.put("Consultar", new ConsultarCommand());
+        commands.put("Visualizar", new VisualizarCommand());
         
         vhs = new HashMap<String, IViewHelper>();
         
