@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@page import="javax.swing.JOptionPane"%>
 <%@page import="model.strategy.ListarOpcoes"%>
@@ -15,45 +14,72 @@
 </head>
 <body>
 	<%
-		Equipamento equipa = (Equipamento) session.getAttribute("equipamento");
+		Equipamento equipa = (Equipamento) request.getAttribute("equipamento");
+		StringBuilder componente = new StringBuilder();
 	%>
+
 	<form action="Equipamento" method="post">
-
-		<P> Serial: <input type="text" name="serial" value =
 		<%
-			if(equipa != null) out.print("'" + equipa.getSerial() + "'");
+			componente.setLength(0);
+			componente.append("<input type='hidden' name='idEquipHidden' value='");
+			if(equipa != null) {componente.append(equipa.getId());}
+			componente.append("'/>");
+			out.print(componente.toString());
+			
 		%>
-		></p>
 
-		<P> Número de patrimônio: <input type="text" name="patrimonio" value=
 		<%
-			if(equipa != null) out.print("'" + equipa.getNumPatrimonio() + "'");
+			componente.setLength(0);
+			componente.append("<P> Serial: ");
+			componente.append("<input type='text' name='serial' value='");
+			if(equipa != null) {componente.append(equipa.getSerial());}
+			componente.append("'/></P>");
+			out.print(componente.toString());
+			
 		%>
-		></p>
-
-		<P> Observação: <input type="text" name="observacao" value=
 		<%
-			if(equipa != null) out.print("'" + equipa.getObservacao() + "'");
+			componente.setLength(0);
+			componente.append("<P> Número de patrimônio: ");
+			componente.append("<input type='text' name='patrimonio' value='"); 
+			if(equipa != null) {componente.append(equipa.getNumPatrimonio());}
+			componente.append("'/></P>");
+			out.print(componente.toString());
 		%>
-		></p>
-
-		<P> Presencial: <input type="checkbox" name="locPresencial" value="presencial" 
 		<%
-			if(equipa != null) out.print("checked");
+			componente.setLength(0);
+			componente.append("<P> Observação: ");
+			componente.append("<input type='text' name='observacao' value ='"); 
+			if(equipa != null) {componente.append(equipa.getObservacao());}
+			componente.append("'/></P>");
+			out.print(componente.toString());
 		%>
-		></p>
 		
-        <P> Compartilhado: <input type="checkbox" name="compartilhada" value="compartilhada"
 		<%
-			if(equipa != null) out.print("checked");
+			componente.setLength(0);
+			componente.append("<P> Presencial: ");
+			componente.append("<input type='checkbox' name='locPresencial' value='presencial'"); 
+			if(equipa != null && equipa.getLocPresencial()){componente.append("checked");}
+			componente.append("/></P>");
+			out.print(componente.toString());
 		%>
-		></p>
 
-        <P> Contrato de equipamento de terceiro: <input type="text" name="contEquipTerceiro" value=
 		<%
-			if(equipa != null) out.print("'" + equipa.getContratoEquipamentoTerceiro().getId() + "'");
+			componente.setLength(0);
+			componente.append("<P> Compartilhado: ");
+			componente.append("<input type='checkbox' name='compartilhada' value='compartilhada'"); 
+			if(equipa != null && equipa.getCompartilhado()){componente.append("checked");}
+			componente.append("/></P>");
+			out.print(componente.toString());
 		%>
-		></p>
+
+		<%
+			componente.setLength(0);
+			componente.append("<P> Contrato de equipamento de terceiro: ");
+			componente.append("<input type='text' name='contEquipTerceiro' value='"); 
+			if(equipa != null) {componente.append(equipa.getContratoEquipamentoTerceiro().getId());}
+			componente.append("'/></P>");
+			out.print(componente.toString());
+		%>
 
 		Tipo de equipmento : <select name="tipoEquipamento">
 			<option value="">Selecione...</option>
@@ -67,15 +93,15 @@
 				for(int i = 0; i < entidades.size(); i++){	
 					TipoEquipamento tipoEquip = (TipoEquipamento)entidades.get(i);
 					sbRegistro.setLength(0);
-					sbRegistro.append("<option value='" + tipoEquip.getId() + "'>"
-						+ tipoEquip.getDescricao() + " " + tipoEquip.getMarca() + "</option");
-					
+
+					sbRegistro.append("<option value='" + tipoEquip.getId() + "' ");
+
 					if(equipa != null && equipa.getTipoEquipamento().getId() == tipoEquip.getId()){
 						sbRegistro.append("selected");
 					}
 
 					sbRegistro.append(">");
-
+					sbRegistro.append(tipoEquip.getDescricao() + " " + tipoEquip.getMarca() + "</option>");
 					out.print(sbRegistro.toString());
 				}
 
@@ -93,15 +119,15 @@
 				for(int i = 0; i < entidades.size(); i++){	
 					ntFiscal = (NotaFiscal)entidades.get(i);
 					sbRegistro.setLength(0);
-					sbRegistro.append("<option value='" + ntFiscal.getId() + "'>"
-						+ ntFiscal.getNumero() + "</option");
+
+					sbRegistro.append("<option value='" + ntFiscal.getId() + "' ");
 					
 					if(equipa != null && equipa.getNotaFiscal().getId() == ntFiscal.getId()){
 						sbRegistro.append("selected");
 					}
 
 					sbRegistro.append(">");
-					
+					sbRegistro.append(ntFiscal.getNumero() + "</option>");
 					out.print(sbRegistro.toString());
 				}
 
@@ -119,17 +145,17 @@
 				for(int i = 0; i < entidades.size(); i++){	
 					local = (Localizacao)entidades.get(i);
 					sbRegistro.setLength(0);
-					sbRegistro.append("<option value='" + local.getId() + "'>"
-						+ local.getAndar() + "º andar - "
-						+ local.getPredio() + " - " 
-						+ local.getLado() + "</option");
+
+					sbRegistro.append("<option value='" + local.getId() + "' ");
 
 					if(equipa != null && equipa.getLocalizacao().getId() == local.getId()){
 						sbRegistro.append("selected");
 					}
-					
+
 					sbRegistro.append(">");	
-					
+					sbRegistro.append(local.getAndar() + "º andar - "
+						+ local.getPredio() + " - " 
+						+ local.getLado() + "</option>");
 					out.print(sbRegistro.toString());
 				}
 

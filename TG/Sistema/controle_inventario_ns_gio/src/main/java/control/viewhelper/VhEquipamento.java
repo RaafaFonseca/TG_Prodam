@@ -26,7 +26,12 @@ public class VhEquipamento implements IViewHelper{
         Equipamento equipamento = new Equipamento();
 
 
-        if(operacao.equals("Salvar")){
+        if(operacao.equals("Salvar") || operacao.equals("Alterar")){
+
+            if(operacao.equals("Alterar")){
+                equipamento.setId(Integer.parseInt(request.getParameter("idEquipHidden")));
+            }
+
             equipamento.setSerial(request.getParameter("serial"));
             equipamento.setNumPatrimonio(request.getParameter("patrimonio"));
             equipamento.setObservacao(request.getParameter("observacao"));
@@ -70,9 +75,10 @@ public class VhEquipamento implements IViewHelper{
         
         String operacao = request.getParameter("operacao");
         
-        if(operacao.equals("Salvar")){
-            rD = request.getRequestDispatcher("index.jsp");
+        if(operacao.equals("Salvar") || operacao.equals("Alterar")){
+            rD = request.getRequestDispatcher("equipamento.jsp");
         }
+        
         if(operacao.equals("Visualizar")){
             request.setAttribute("equipamento", resultado.getEntidades().get(0));
             rD = request.getRequestDispatcher("equipamento.jsp");
