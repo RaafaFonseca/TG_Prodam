@@ -25,7 +25,6 @@ public class VhEquipamento implements IViewHelper{
 
         Equipamento equipamento = new Equipamento();
 
-
         if(operacao.equals("Salvar") || operacao.equals("Alterar")){
 
             if(operacao.equals("Alterar")){
@@ -48,7 +47,7 @@ public class VhEquipamento implements IViewHelper{
             equipamento.getNotaFiscal().setId(Integer.parseInt(request.getParameter("notaFiscal")));;
             equipamento.getLocalizacao().setId(Integer.parseInt(request.getParameter("localizacao")));;
 
-        }else if (operacao.equals("Visualizar")){
+        }else if (operacao.equals("Visualizar") || operacao.equals("Excluir")){
             HttpSession session = request.getSession();
             Resultado resultado = (Resultado)session.getAttribute("resultado");
             String idEquipamento = request.getParameter("idEquipamento");
@@ -75,7 +74,7 @@ public class VhEquipamento implements IViewHelper{
         
         String operacao = request.getParameter("operacao");
         
-        if(operacao.equals("Salvar") || operacao.equals("Alterar")){
+        if(operacao.equals("Salvar") || operacao.equals("Alterar") || operacao.equals("Excluir")){
             rD = request.getRequestDispatcher("equipamento.jsp");
         }
         
@@ -86,6 +85,5 @@ public class VhEquipamento implements IViewHelper{
 
         rD.forward(request, reponse);
 
-    }
-    
+    } 
 }

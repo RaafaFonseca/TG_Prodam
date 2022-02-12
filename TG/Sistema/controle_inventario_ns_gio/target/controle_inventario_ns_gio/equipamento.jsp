@@ -190,6 +190,7 @@
 				entidades = resultado.getEntidades();
 				sbRegistro = new StringBuilder();
 				StringBuilder sbLink = new StringBuilder();
+				StringBuilder sbExcluir = new StringBuilder();
 				request.getSession().setAttribute("resultado",resultado);
 
 				if(entidades != null){
@@ -197,6 +198,7 @@
 						equipamentos = (Equipamento)entidades.get(i);
 						sbRegistro.setLength(0);
 						sbLink.setLength(0);
+						sbExcluir.setLength(0);
 
 						sbRegistro.append("<TR ALIGN='CENTER'>");
 						
@@ -207,11 +209,18 @@
 						sbLink.append("operacao=");
 						sbLink.append("Visualizar");												
 						sbLink.append(">");
+
+						sbExcluir.append("<a href=Equipamento?");
+						sbExcluir.append("idEquipamento=");
+						sbExcluir.append(equipamentos.getId());						
+						sbExcluir.append("&");
+						sbExcluir.append("operacao=");
+						sbExcluir.append("Excluir");												
+						sbExcluir.append(">");
 						
 						sbRegistro.append("<TD>");
-						sbRegistro.append("<input type='checkbox' name='ckSelecionado' value='");	
-						sbRegistro.append(equipamentos.getId());
-						sbRegistro.append("'> ");
+						sbRegistro.append(sbExcluir.toString());	
+						sbRegistro.append("Excluir");
 						sbRegistro.append("</a>");				
 						sbRegistro.append("</TD>");
 
